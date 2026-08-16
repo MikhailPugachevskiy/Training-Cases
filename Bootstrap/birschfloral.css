@@ -4,3 +4,25 @@ body {
     color: #5a5a5a;
     font-family: 'Open Sans';
 }
+
+.carousel,
+.hero {
+    margin-bottom: 4rem;
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+.carousel-item {
+    height: 32rem;
+}
+
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+}
