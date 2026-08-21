@@ -72,3 +72,18 @@ body {
         margin-top: 7rem;
     }
 }
+
+.hero {
+    background: url("https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+    background-position: top left;
+    background-size: cover;
+    height: 100vh;
+}
+
+.lead {
+    font-size: 2em;
+}
+
+nav.navbar {
+    background-color: #6d6875;
+}
