@@ -45,4 +45,20 @@ const restaurant = {
     zipcode: '11206',
 }
 
-//YOUR CODE GOES DOWN HERE:
+/*YOUR CODE GOES DOWN HERE:*/
+
+//SOLUTION #1:
+
+const fullAddress = `${restaurant.address}, ${restaurant.city}, ${restaurant.state} ${restaurant.zipcode}`;
+
+//SOLUTION #2:
+
+const fullAddress = `${restaurant["address"]}, ${restaurant["city"]}, ${restaurant["state"]} ${restaurant["zipcode"]}`;
+
+//SOLUTION #3:
+
+const fullAddress = restaurant.address + ", " + restaurant.city + ", " + restaurant.state + " " + restaurant.zipcode;
+
+//SOLUTION #4:
+
+const fullAddress = restaurant["address"] + ", " + restaurant["city"] + ", " + restaurant["state"] + " " + restaurant["zipcode"];
