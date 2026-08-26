@@ -53,4 +53,14 @@ for (let i = 0; i < people.length; i++) {
 
 
 
+/*For...Of Practice
 
+Let's practice using for...of. I've provided you with an array called numbers.  Please use a for...of loop to loop over it, 
+and print out the square of each value (the number multiplied by itself).*/
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //DON'T CHANGE THIS LINE!
+
+// WRITE YOUR LOOP BELOW THIS LINE:
+for (let num of numbers) {
+    console.log(num * num);
+}
