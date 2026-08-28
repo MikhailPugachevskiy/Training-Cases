@@ -109,3 +109,28 @@ function isShortsWeather(temperature) {
 
 
 
+/*Last Element Exercise
+
+Please write a function called lastElement which accepts a single array argument.  The function should return the last element of the array (without removing the element).  If the array is empty, the function should return null.
+
+    lastElement([3,5,7]) //7
+    lastElement([1]) //1
+    lastElement([]) //null 
+
+To test if the array is empty or not, you can use the array's .length property.
+
+If the array's length is equal to 0, it means it's empty and you can return null. Otherwise, if the array's length is higher than 0 that means there is a last element that we should return.
+
+Since array index numbers start at 0, the last element in the array will always be the array's length minus 1.*/
+
+// DEFINE YOUR FUNCTION BELOW:
+function lastElement(array) {
+    if (array.length === 0) {
+        return null;
+    } else {
+        return array[array.length - 1];
+    }
+}
+
+
+
