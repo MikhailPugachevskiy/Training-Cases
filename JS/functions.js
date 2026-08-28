@@ -84,3 +84,28 @@ function multiply(num1, num2) {
 
 
 
+/*isShortsWeather Function
+
+ Write function isShortsWeather. 
+
+    It should accept a single number argument, which we will call temperature(but you can name it whatever you want, of course). 
+
+    If temperature is greater than or equal to 75, return true. 
+
+    Otherwise, return false.   
+
+    isShortsWeather(80) //true
+    isShortsWeather(48) //false
+    isShortsWeather(75) //true */
+
+// DEFINE YOUR FUNCTION BELOW:
+function isShortsWeather(temperature) {
+    if (temperature >= 75) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
