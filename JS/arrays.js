@@ -109,3 +109,46 @@ Be sure to use arrow function syntax!*/
 const greet = (name) => {
     return `Hey ${name}!`;
 }
+
+
+
+/*Filter Exercise
+
+Let's get some practice using the filter method. Write a function called validUserNames that accepts an array of usernames (strings).  
+It should return a new array, containing only the usernames that are less than 10 characters. For example:
+
+    validUserNames(['mark', 'staceysmom1978', 'q29832128238983', 'carrie98', 'MoanaFan']);
+    // => ["mark", "carrie98", "MoanaFan"]
+
+
+Note: The syntax for this solution might be a little strange to you at this point in the course because it requires you to write the code, 
+that you just learned in the previous lecture, inside of a function. e.g.,
+
+    function validUserNames(usernames) {
+      // your code here
+    }
+
+or if you want to get fancy with an arrow function:
+
+const validUserNames = usernames => // your code here;
+
+There is no need to define an actual array of usernames, that part is done for you behind the scenes.*/
+
+
+/*Define a function named validUserNames that accepts one argument, an array of strings (usernames).
+
+You would call the filter() method on the provided array inside of the function.
+
+The filter() method accepts a function as an argument, which automatically gets the value of each element in the array as the first (and only) parameter.
+
+You want to return either true or false from the filter() callback function to determine if the element should pass the filter or not 
+(which will decide if the value will make it to the new filtered array that the filter method is creating). 
+With that in mind, from the filter callback function, you want to use .length on each string value and see if it's less than 10 (< 10), 
+and return from it based on that.
+
+Make sure to add another (outer) return to return the newly created filtered array from the outer validUserNames function.*/
+
+const validUserNames = usernames => usernames.filter(usr => usr.length < 10);
+
+
+
