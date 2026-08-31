@@ -1,4 +1,4 @@
-// ==========================================
+// 240. 
 // AN OLDER WAY OF ADDING DEFAULT PARAM VALUE
 // ==========================================
 
@@ -20,7 +20,7 @@ function greet(person, msg = "Hey there", punc = '!') {
     console.log(`${msg}, ${person}${punc}`)
 }
 
-
+//241. Spread in Function Calls
 
 const nums = [13, 4, 5, 21, 3, 3, 1, 2, 7, 6, 4, 2, 53456];
 // SPREAD IN FUNCTIONS
@@ -49,3 +49,20 @@ const dataFromForm = {
 }
 const newUser = { ...dataFromForm, id: 2345, isAdmin: false }
 
+
+
+// function sum() {
+//     return arguments.reduce((total, el) => total + el)
+// }
+
+// COLLECT THE "REST" IN NUMS:
+function sum(...nums) {
+    return nums.reduce((total, el) => total + el)
+}
+
+
+function raceResults(gold, silver, ...everyoneElse) {
+    console.log(`GOLD MEDAL GOES TO: ${gold}`)
+    console.log(`SILVER MEDAL GOES TO: ${silver}`)
+    console.log(`AND THANKS TO EVERYONE ELSE: ${everyoneElse}`)
+}
