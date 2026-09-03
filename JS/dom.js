@@ -102,3 +102,24 @@ span.innerText = 'Disgusting';
 
 
 
+/*Manipulating Attributes Practice
+
+Please select the image element and:
+
+    change its source to this url:
+    https://images.unsplash.com/photo-1581061090142-c2cd0ec9f021?w=200
+
+    change its alt text to be "chicken"
+
+<!--DONT CHANGE ANYTHING IN THIS FILE!-->
+Egg and Chicken
+
+
+<h4>Which Came First?</h4>
+<img src="https://images.unsplash.com/photo-1607690424560-35d967d6ad7c?w=200" alt="egg">
+<!-- image source: unsplash.com --> */
+
+// The url you need: 'https://images.unsplash.com/photo-1581061090142-c2cd0ec9f021?w=200'
+const eggImg = document.querySelector('img');
+eggImg.src = 'https://images.unsplash.com/photo-1581061090142-c2cd0ec9f021?w=200';
+eggImg.alt = 'chicken';
