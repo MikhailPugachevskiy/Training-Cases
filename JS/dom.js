@@ -95,3 +95,10 @@ Provided you with some basic markup in index.html
 </body>
 
 </html> */
+
+// YOUR CODE GOES IN HERE:
+const span = document.querySelector("span");
+span.innerText = 'Disgusting';
+
+
+
