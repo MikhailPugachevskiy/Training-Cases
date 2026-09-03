@@ -209,3 +209,56 @@ const spans = document.querySelectorAll('span');
 for (let i = 0; i < spans.length; i++) {
     spans[i].style.color = colors[i];
 }
+
+
+
+/*ClassList Practice
+
+In index.html, you'll find 6 <li> elements, two of which have the 'highlight' class applied to them. 
+
+    Please use JavaScript and the classList property to invert which elements have the highlight class. 
+
+    Basically iterate over all the <li> elements and toggle the class of 'highlight' on each one.  
+
+<!DOCTYPE html>
+
+<head>
+    <title>ClasList</title>
+    <!--LEAVE THESE LINES ALONE, PLEASE! THEY MAKE THE LIVE PREVIEW WORK!-->
+    <script src="node_modules/babel-polyfill/dist/polyfill.js" type="text/javascript"> </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>if(window.NodeList&&!NodeList.prototype.forEach){NodeList.prototype.forEach=Array.prototype.forEach}</script>
+</head>
+
+<body>
+    <!--LEAVE THIS FILE ALONE!-->
+    <ul>
+        <li>Hello</li>
+        <li class="highlight">Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+        <li class="highlight">Hello</li>
+        <li>Hello</li>
+    </ul>
+</body>
+
+</html>
+
+No need to touch anything in this file:
+li {
+  background-color: #B10DC9;
+}
+
+.highlight {
+  background-color: #7FDBFF;
+}*/
+
+// WRITE YOUR CODE IN HERE:
+const lis = document.querySelectorAll('li');
+
+for (let li of lis) {
+    li.classList.toggle('highlight');
+}
+
+
+
