@@ -262,3 +262,44 @@ for (let li of lis) {
 
 
 
+/* Button Insanity Exercise
+
+Without touching index.html, please use JavaScript to create exactly 100 new button elements! 
+Add each new button inside the container element provided in index.html. Here are the steps:
+
+    Create exactly 100 new button elements
+
+    Each button must have some text inside of it (it doesn't matter what)
+
+    Each button must be appended inside the container div.
+    Hint: Loop 100 times. Inside the loop, create a new empty button element.  Add some innerText to the button.  
+    Then, append the button to the container.
+
+    <!DOCTYPE html>
+
+<head>
+    <title>100 Buttons!</title>
+</head>
+
+<body>
+    <!--DO NOT TOUCH THIS FILE!-->
+    <h1>Look At All My Buttons!</h1>
+    <div id="container">
+    
+    </div>
+    
+    
+    
+    
+    <script>(function(arr){arr.forEach(function(item){if(item.hasOwnProperty('append'))return;Object.defineProperty(item,'append',{configurable:true,enumerable:true,writable:true,value:function append(){var argArr=Array.prototype.slice.call(arguments),docFrag=document.createDocumentFragment();argArr.forEach(function(argItem){var isNode=argItem instanceof Node;docFrag.appendChild(isNode?argItem:document.createTextNode(String(argItem)));});this.appendChild(docFrag);}});});})([Element.prototype,Document.prototype,DocumentFragment.prototype]);</script> 
+</body>
+
+</html>*/
+
+// WRITE YOUR CODE IN HERE:
+const container = document.querySelector('#container');
+for (let i = 0; i < 100; i++) {
+    const btn = document.createElement('button');
+    btn.innerText = 'Click';
+    container.appendChild(btn);
+}
