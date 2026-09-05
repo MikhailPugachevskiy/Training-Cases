@@ -1,5 +1,15 @@
 export { }
 
+/**
+ * Challenge: Create a Pizza object type. It should include a `name`
+ * and a `price` property.
+ */
+
+type Pizza = {
+    name: string
+    price: number
+}
+
 const menu = [
     { name: "Margherita", price: 8 },
     { name: "Pepperoni", price: 10 },
@@ -7,14 +17,19 @@ const menu = [
     { name: "Veggie", price: 9 },
 ]
 
-type Pizza = { name: string; price: number }
 type Order = { id: number; pizza: Pizza; status: "ordered" | "completed" }
 
 let cashInRegister = 100
 let nextOrderId = 1
 const orderQueue: Order[] = []
 
-function addNewPizza(pizzaObj: Pizza) {
+/**
+ * Challenge: teach TS that the pizzaObj is supposed to be a Pizza type.
+ * Then like before, look through the code to see if there are any new
+ * TS warnings to deal with (😉), and fix those issues
+ */
+
+function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj)
 }
 
