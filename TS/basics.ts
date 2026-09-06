@@ -67,7 +67,7 @@ let person2: Person = {
     }
 }
 */
-// Challenge: try to figure out how to move the nested address object type
+// Exercise 4: try to figure out how to move the nested address object type
 // into a separate type definition. When done correctly, there should be no more
 // red errors in the editor
 
@@ -108,7 +108,7 @@ let person2: Person = {
 */
 
 
-type Address = {
+/*type Address = {
     street: string
     city: string
     country: string
@@ -142,5 +142,32 @@ function displayInfo(person) {
     console.log(`${person.name} lives at ${person.address?.street}`)
 }
 
-displayInfo(person1)
+displayInfo(person1)*/
 
+
+
+//Typing arrays
+type Person = {
+    name: string
+    age: number
+    isStudent: boolean
+}
+
+let person1: Person = {
+    name: "Joe",
+    age: 42,
+    isStudent: true,
+}
+
+let person2: Person = {
+    name: "Jill",
+    age: 66,
+    isStudent: false,
+}
+
+/*
+ * Exercise 5: create an array of people objects and
+ * manually type it as an array of Person types
+ */
+
+let people: Person[] = [person1, person2]
