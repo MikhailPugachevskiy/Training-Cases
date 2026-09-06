@@ -171,3 +171,22 @@ let person2: Person = {
  */
 
 let people: Person[] = [person1, person2]
+
+
+
+//Literal Types
+let myName: "Bob" = "Bob"
+const myName2: "Bobby" = "Bobby"
+
+//Unions
+type User = {
+    username: string
+    role: "guest" | "member" | "admin"
+}
+
+type UserRole = "guest" | "member" | "admin"
+
+let userRole: UserRole = "member"
+
+
+
