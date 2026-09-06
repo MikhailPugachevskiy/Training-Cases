@@ -94,16 +94,17 @@ function completeOrder(orderId: number) {
 * to either be a string or a number.
 */
 
-function getPizzaDetail(identifier: string | number) {
+export function getPizzaDetail(identifier: string | number) {
 
     /* Task 9: write the code to check if the parameter is a string
     * or a number, and use the menu.find() method accordingly
     */
     if (typeof identifier === "string") {
         return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())
-    } else {
+    } else if (typeof identifier === "number") {
         return menu.find(pizza => pizza.id === identifier)
-
+    } else {
+        throw new TypeError("Parameter 'identifier' must be either a string or a number")
     }
 }
 
@@ -111,8 +112,12 @@ addNewPizza({ id: 5, name: "Chicken Bacon Ranch", price: 12 })
 addNewPizza({ id: 6, name: "BBQ Chicken", price: 12 })
 addNewPizza({ id: 7, name: "Spicy Sausage", price: 11 })
 
-placeOrder("Chicken Bacon Ranch")
-completeOrder(1)
+// placeOrder("Chicken Bacon Ranch")
+// placeOrder("Pepperoni")
+// completeOrder(1)
+// placeOrder("Anchovy")
+// placeOrder("Veggie")
+// completeOrder(2)
 
 console.log("Menu:", menu)
 console.log("Cash in register:", cashInRegister)
