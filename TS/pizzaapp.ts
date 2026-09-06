@@ -1,13 +1,24 @@
 export { }
 
 /**
- * Challenge: Create a Pizza object type. It should include a `name`
+ * Task 1: Create a Pizza object type. It should include a `name`
  * and a `price` property.
  */
 
 type Pizza = {
     name: string
     price: number
+}
+
+/**
+ * Task 4: Add an Order type. It should have `id`, `pizza`, and `status` properties.
+ * Look through the code if you need a reminder as to what data types those should be.
+ */
+
+type Order = {
+    id: number
+    pizza: Pizza
+    status: string
 }
 
 const menu = [
@@ -17,14 +28,12 @@ const menu = [
     { name: "Veggie", price: 9 },
 ]
 
-type Order = { id: number; pizza: Pizza; status: "ordered" | "completed" }
-
 let cashInRegister = 100
 let nextOrderId = 1
-const orderQueue: Order[] = []
+const orderQueue: Order = []
 
 /**
- * Challenge: teach TS that the pizzaObj is supposed to be a Pizza type.
+ * Task 2: teach TS that the pizzaObj is supposed to be a Pizza type.
  * Then like before, look through the code to see if there are any new
  * TS warnings to deal with (😉), and fix those issues
  */
@@ -46,7 +55,7 @@ function placeOrder(pizzaName: string) {
 }
 
 /**
- * Challenge: Teach TS what data type should be used for the 
+ * Task 3: Teach TS what data type should be used for the 
  * orderId in the completeOrder function. Then check for any
  * additional warnings TS comes up with and fix those.
  */
@@ -71,3 +80,5 @@ completeOrder(1)
 console.log("Menu:", menu)
 console.log("Cash in register:", cashInRegister)
 console.log("Order queue:", orderQueue)
+
+
