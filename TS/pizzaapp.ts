@@ -15,10 +15,15 @@ type Pizza = {
  * Look through the code if you need a reminder as to what data types those should be.
  */
 
+/**
+ * Task 6: using literal types and unions, update the Order status so that
+ * it can only ever be "ordered" or "completed"
+ */
+
 type Order = {
     id: number
     pizza: Pizza
-    status: string
+    status: "ordered" | "completed"
 }
 
 const menu = [
