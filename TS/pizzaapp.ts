@@ -28,9 +28,12 @@ const menu = [
     { name: "Veggie", price: 9 },
 ]
 
+/**
+ * Task 5: Fix the TS warnings about orderQueue!
+ */
 let cashInRegister = 100
 let nextOrderId = 1
-const orderQueue: Order = []
+const orderQueue: Order[] = []
 
 /**
  * Task 2: teach TS that the pizzaObj is supposed to be a Pizza type.
@@ -60,10 +63,14 @@ function placeOrder(pizzaName: string) {
  * additional warnings TS comes up with and fix those.
  */
 
+/**
+ * Task 6: Fix the warning below by handling the "sad path" scenario!
+ */
+
 function completeOrder(orderId: number) {
     const order = orderQueue.find(order => order.id === orderId)
     if (!order) {
-        console.error(`Order ${orderId} does not exist`)
+        console.error(`Order ${orderId} was not found in the orderQueue`)
         return
     }
     order.status = "completed"
