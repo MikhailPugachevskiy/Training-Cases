@@ -51,6 +51,11 @@ function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj)
 }
 
+/*
+ * Task 10: add explicit return types to the rest of our functions
+ */
+
+
 function placeOrder(pizzaName: string) {
     const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
     if (!selectedPizza) {
@@ -73,7 +78,7 @@ function placeOrder(pizzaName: string) {
  * Task 6: Fix the warning below by handling the "sad path" scenario!
  */
 
-function completeOrder(orderId: number) {
+function completeOrder(orderId: number): Order | undefined {
     const order = orderQueue.find(order => order.id === orderId)
     if (!order) {
         console.error(`Order ${orderId} was not found in the orderQueue`)
