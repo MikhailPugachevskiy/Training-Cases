@@ -181,11 +181,6 @@ const myName2: "Bobby" = "Bobby"
 
 
 //Unions
-type User = {
-    username: string
-    role: "guest" | "member" | "admin"
-}
-
 type UserRole = "guest" | "member" | "admin"
 
 let userRole: UserRole = "member"
@@ -193,8 +188,6 @@ let userRole: UserRole = "member"
 
 
 //Function Return Types
-type UserRole = "guest" | "member" | "admin"
-
 type User = {
     username: string
     role: UserRole
@@ -213,6 +206,9 @@ function fetchUserDetails(username: string): User {
     }
     return user
 }
+
+
+
 
 
 
