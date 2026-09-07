@@ -55,7 +55,6 @@ function addNewPizza(pizzaObj: Pizza): void {
  * Task 10: add explicit return types to the rest of our functions
  */
 
-
 function placeOrder(pizzaName: string) {
     const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
     if (!selectedPizza) {
@@ -99,7 +98,20 @@ function completeOrder(orderId: number): Order | undefined {
 * to either be a string or a number.
 */
 
-export function getPizzaDetail(identifier: string | number) {
+/**
+ * Task 10 (part 1): add a return type to the getPizzaDetail function.
+ * 
+ * NOTE: you're very likely going to get a big TS warning once you do this 😅
+ * Don't fret, we'll address this warning next!
+ */
+
+/**
+ * Task 10 (part 2): explicitly type the return value of this function
+ * to tell TypeScript it could either be a Pizza object or undefined
+ * as the return value.
+ */
+
+export function getPizzaDetail(identifier: string | number): Pizza | undefined {
 
     /* Task 9: write the code to check if the parameter is a string
     * or a number, and use the menu.find() method accordingly
