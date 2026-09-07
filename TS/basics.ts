@@ -1,3 +1,5 @@
+export { }
+
 /*let myName: string = "Bob"
 // Primitive Data Types: string, number, boolean
 // Exercise 1: Explicitly type the variables below:
@@ -188,18 +190,18 @@ let userRole: UserRole = "member"
 
 
 //Function Return Types
-type User = {
+type AppUser = {
     username: string
     role: UserRole
 }
 
-const users: User[] = [
+const users: AppUser[] = [
     { username: "john_doe", role: "member" },
     { username: "jane_doe", role: "admin" },
     { username: "guest_user", role: "guest" }
 ];
 
-function fetchUserDetails(username: string): User {
+function fetchUserDetails(username: string): AppUser {
     const user = users.find(user => user.username === username)
     if (!user) {
         throw new Error(`User with username ${username} not found`)
