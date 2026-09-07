@@ -26,7 +26,6 @@ function updateUser(id: number, updates: UpdatedUser) {
 // updateUser(4, { role: "contributor" });
 
 function addNewUser(newUser: any): User {
-
     // Create a new variable called `user`, add an `id` property to it
     // and spread in all the properties of the `newUser` object. Think
     // about how you should set the type for this `user` object.

@@ -59,10 +59,22 @@ const orderQueue: Order[] = []
  * still run.
  */
 
-function addNewPizza(pizzaObj: Pizza): void {
-    pizzaObj.id = nextPizzaId++
-    menu.push(pizzaObj)
+/**
+ * Task 13:
+ * Fix the addNewPizza function using the Omit utility type. This might
+ * require more than just changing the "Pizza" typed `pizzaObj` parameter
+ * Return the new pizza object (with the id added) from the function.
+ */
+
+function addNewPizza(pizzaObj: Omit<Pizza, "id">): Pizza {
+    const newPizza: Pizza = {
+        id: nextPizzaId++,
+        ...pizzaObj
+    }
+    menu.push(newPizza)
+    return newPizza
 }
+
 
 /*
  * Task 10: add explicit return types to the rest of our functions
@@ -77,9 +89,9 @@ function addNewPizza(pizzaObj: Pizza): void {
 
 
 
-addNewPizza({ id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
-addNewPizza({ id: nextPizzaId++, name: "BBQ Chicken", price: 12 })
-addNewPizza({ id: nextPizzaId++, name: "Spicy Sausage", price: 11 })
+addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
+addNewPizza({ name: "BBQ Chicken", price: 12 })
+addNewPizza({ name: "Spicy Sausage", price: 11 })
 
 
 
