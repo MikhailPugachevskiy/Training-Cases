@@ -27,18 +27,21 @@ type Order = {
     status: "ordered" | "completed"
 }
 
+let cashInRegister = 100
+let nextOrderId = 1
+let nextPizzaId = 1
+
 const menu: Pizza[] = [
-    { id: 1, name: "Margherita", price: 8 },
-    { id: 2, name: "Pepperoni", price: 10 },
-    { id: 3, name: "Hawaiian", price: 10 },
-    { id: 4, name: "Veggie", price: 9 },
+    { id: nextPizzaId++, name: "Margherita", price: 8 },
+    { id: nextPizzaId++, name: "Pepperoni", price: 10 },
+    { id: nextPizzaId++, name: "Hawaiian", price: 10 },
+    { id: nextPizzaId++, name: "Veggie", price: 9 },
 ]
 
 /**
  * Task 5: Fix the TS warnings about orderQueue!
  */
-let cashInRegister = 100
-let nextOrderId = 1
+
 const orderQueue: Order[] = []
 
 /**
@@ -47,13 +50,38 @@ const orderQueue: Order[] = []
  * TS warnings to deal with (😉), and fix those issues
  */
 
+/**
+ * Task 12 part 1.5: Try to move the logic for adding an ID to the pizza objects 
+ * inside the addNewPizza function, so that we can call addNewPizza with no id, and
+ * the function will handle that part for us.
+ * 
+ * NOTE: you will run into TS warnings that we'll address soon, but the code should
+ * still run.
+ */
+
 function addNewPizza(pizzaObj: Pizza): void {
+    pizzaObj.id = nextPizzaId++
     menu.push(pizzaObj)
 }
 
 /*
  * Task 10: add explicit return types to the rest of our functions
  */
+
+/**
+ * Task 12 part 1: Make it so we can use a global variable to track the nextPizzaId
+ * and use the same trick we use with `nextOrderId++` when you're calling addNewPizza.
+ * Update the menu items to use this as well so we don't have to manually enter ids 1-4
+ * like we're currently doing
+ */
+
+
+
+addNewPizza({ id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
+addNewPizza({ id: nextPizzaId++, name: "BBQ Chicken", price: 12 })
+addNewPizza({ id: nextPizzaId++, name: "Spicy Sausage", price: 11 })
+
+
 
 function placeOrder(pizzaName: string) {
     const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
@@ -99,14 +127,14 @@ function completeOrder(orderId: number): Order | undefined {
 */
 
 /**
- * Task 10 (part 1): add a return type to the getPizzaDetail function.
+ * Task 11 (part 1): add a return type to the getPizzaDetail function.
  * 
  * NOTE: you're very likely going to get a big TS warning once you do this 😅
  * Don't fret, we'll address this warning next!
  */
 
 /**
- * Task 10 (part 2): explicitly type the return value of this function
+ * Task 11 (part 2): explicitly type the return value of this function
  * to tell TypeScript it could either be a Pizza object or undefined
  * as the return value.
  */
@@ -125,9 +153,7 @@ export function getPizzaDetail(identifier: string | number): Pizza | undefined {
     }
 }
 
-addNewPizza({ id: 5, name: "Chicken Bacon Ranch", price: 12 })
-addNewPizza({ id: 6, name: "BBQ Chicken", price: 12 })
-addNewPizza({ id: 7, name: "Spicy Sausage", price: 11 })
+
 
 // placeOrder("Chicken Bacon Ranch")
 // placeOrder("Pepperoni")
