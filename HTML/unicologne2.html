@@ -1,0 +1,66 @@
+<!--Übungsaufgabe 2
+Erstellen Sie ein Kontaktformular-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktformular</title>
+</head>
+
+<body>
+    <form>
+        <label>Vorname:
+            <input type="text" name="vname" value="Lucky" />
+        </label>
+        <br />
+        <label>Nachname:
+            <input type="text" name="fname" value="Luke" />
+        </label>
+        <br />
+        <label>Passwort:<input type="password" name="pwd" />
+        </label>
+        <br />
+        <hr>
+        Status:
+        <br />
+        <input type="radio" name="status" value="ang">
+        angestellt
+        </input>
+        <br />
+        <input type="radio" name="status" value="bea">
+        verbeamtet
+        </input><br />
+        <input type="radio" name="status" value="sel">
+        freiberuflich
+        </input>
+        <br />
+        <hr>
+        Kontaktart:
+        <select>
+            <option value="priv">Privater Kontakt</option>
+            <option value="job">Beruflicher Kontakt</option>
+            <option value="none" selected>Keine Angabe</option><br>
+        </select>
+        <hr>
+        <br />
+        Kontaktm&oumlglichkeiten<br />
+        <input type="checkbox" name="rechte" value="phone_job">
+        Telefon berufl.<br />
+        <input type="checkbox" name="rechte" value="phone_priv">
+        Telefon privat<br />
+        <input type="checkbox" name="rechte" value="phone_cell">
+        Mobil<br />
+        <hr>
+        Bemerkung:
+        <br />
+        <textarea cols=40 rows=20>Tragen Sie hier Bemerkungen ein
+        </textarea>
+        <button type=button" value="xyz">Dr&uumlck mich!</button>
+        <button><img src=“jim.jpg“ alt="Jim's Knopf"> ist hier!</button>
+    </form>
+</body>
+
+</html>
