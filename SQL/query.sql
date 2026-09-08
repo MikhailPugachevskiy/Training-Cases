@@ -50,3 +50,21 @@ SELECT brand, model, color, year FROM cars
 
 SELECT brand, model, color, year FROM cars
 	WHERE model LIKE 'DB_';
+
+/*Exercise 10: Select the brand, model, color and year from cars exclude any green car show models which are 'DB' followed by any other single character 
+and the year is after 1964*/
+
+SELECT brand, model, color, year FROM cars
+	WHERE color NOT LIKE '%green%'
+	AND model LIKE 'DB_'
+	AND year > 1964;
+
+/*Exercise 11:Select the brand, model, year, condition and price from cars
+		where the condition is 3 or higher
+		and the year is before 1970
+		and the price is below 100,000*/
+
+SELECT brand, model, year, condition, price FROM cars
+	WHERE condition >= 3
+	AND year < 1970
+	AND price <= 100000;
