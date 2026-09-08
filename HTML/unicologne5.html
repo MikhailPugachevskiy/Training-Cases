@@ -1,0 +1,36 @@
+<!--Übungsaufgabe 5: Schreiben Sie JavaScript-Funktionen zum Überprüfen von Formular-Eingaben:
+
+➢ checkIfValidMail(element)
+➢ checkIfNotEmpty(element)
+
+element ist dabei jeweils das Formularelement (<input ...>), in dem die Eingabe erfolgt ist.-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function checkIfEmpty(element) {
+            if (element.value == "") alert("Bitte ausfüllen! Pflichtfeld!");
+        }
+        function checkIfValidMail(element) {
+            var eingabe = element.value;
+            // Fehler: kein @, @ am Ende oder am Anfang
+            if (eingabe.indexOf('@') <= 0 || eingabe.indexOf('@') == eingabe.length - 1
+                // Fehler: kein Punkt
+                || eingabe.indexOf('.') == -1
+                // Fehler: @ hinter dem letzten Punkt a.b@c
+                || eingabe.lastIndexOf('.') < eingabe.lastIndexOf('@')
+                // Fehler: Punkt am Ende oder nur ein Zeichen hinter Punkt
+                || eingabe.lastIndexOf('.') >= eingabe.length - 2)
+                alert("Bitte korrekte email-Adresse angeben!");
+        }
+    </script>
+</head>
+
+<body>
+    Eingabe: <input type="text" onmouseout="checkIfEmpty(this);">
+    Mailadresse: <input type="text" onmouseout="checkIfValidMail(this);">
+</body>
+
+</html>
