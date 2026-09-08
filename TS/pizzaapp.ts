@@ -117,9 +117,13 @@ function addToArray<T>(array: T[], item: T): T[] {
     return array
 }
 
+
+//Task 15: what should be passed in as the generic type on line 53?
+
+
 // example usage:
-addToArray(menu, { id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
-addToArray(orderQueue, { id: nextOrderId++, pizza: menu[2], status: "completed" })
+addToArray<Pizza>(menu, { id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
+addToArray<Order>(orderQueue, { id: nextOrderId++, pizza: menu[2], status: "completed" })
 
 console.log(menu)
 console.log(orderQueue)
