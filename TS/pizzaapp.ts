@@ -107,6 +107,23 @@ function placeOrder(pizzaName: string) {
     return newOrder
 }
 
+
+/* Task 14: add types our generic `addToArray` function. It should work
+* for adding new pizzas to the `menu` and adding new orders to the `orderQueue`
+*/
+
+function addToArray<T>(array: T[], item: T): T[] {
+    array.push(item)
+    return array
+}
+
+// example usage:
+addToArray(menu, { id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
+addToArray(orderQueue, { id: nextOrderId++, pizza: menu[2], status: "completed" })
+
+console.log(menu)
+console.log(orderQueue)
+
 /**
  * Task 3: Teach TS what data type should be used for the 
  * orderId in the completeOrder function. Then check for any
