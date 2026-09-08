@@ -16,3 +16,16 @@ SELECT brand, model, color, price FROM cars
 SELECT brand, model, condition, price FROM cars
 	WHERE condition = 0;
 
+/*Complex conditions
+Numerical filtering
+Exercise 4: Select the brand, model, condition and price from cars find results where the condition is greater than 3
+*/
+
+SELECT brand, model, condition, price FROM cars
+	WHERE condition >= 3;
+
+/*Exercise 5: Select the brand, model, condition and price from cars find results where the price is less than $50,000*/
+
+SELECT brand, model, condition, price FROM cars
+	WHERE price < 50000;
+
