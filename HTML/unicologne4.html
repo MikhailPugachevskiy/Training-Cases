@@ -1,0 +1,50 @@
+<!--Übungsaufgabe 4: Erstellen Sie ein dreispaltiges Layout mit den Spalten „Navigation“, „Text“ und „Person“. 
+Variieren Sie dabei die Breitenangaben mit absoluten Werten (inpx) und relativen Werten (prozentualer Anteil an der Seitenbreite).-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout</title>
+</head>
+
+<style>
+    #spaltelinks {
+        position: absolute;
+        left: 0;
+        /* unmittelbar am linken Rand starten */
+        width: 200px;
+        /* Breite 200 Pixel */
+    }
+
+    #spalterechts {
+        position: absolute;
+        margin-top: 10px;
+        top: 0;
+        /* unmittelbar am oberen Ende beginnen */
+        right: 0;
+        /* unmittelbar am rechten Rand starten */
+        width: 300px;
+        /* Breite 300 Pixel */
+    }
+
+    #main {
+        margin-left: 210px;
+        /* Abstand 210 Pixel zum linken Rand */
+        margin-right: 310px;
+        /* Abstand 310 Pixel zum rechten Rand */
+    }
+</style>
+
+<body>
+    <div id=“div1“>
+        <h1>Layout</h1>
+        <p id="spaltelinks">Text</p>
+        <p id="spalterechts">Navigation</p>
+        <p id="main">Person</p>
+    </div>
+</body>
+
+</html>
