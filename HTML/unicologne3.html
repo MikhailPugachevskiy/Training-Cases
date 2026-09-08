@@ -1,0 +1,53 @@
+<!--Übungsaufgabe 3: Fügen Sie CSS Regeldefinitionen hinzu-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Regeln</title>
+</head>
+
+<style>
+    p {
+        color: red;
+        font-style: italic;
+    }
+
+    h1,
+    h2 {
+        color: blue;
+    }
+
+    .meine_schrift {
+        color: green;
+        font-size: 28pt
+    }
+
+    p.meine_schrift {
+        color: pink;
+        font-weight: bold
+    }
+
+    #ein_element {
+        color: greenyellow;
+        font-size: 64pt
+    }
+</style>
+
+<body>
+    <div class="meine_schrift">Regel Nr. 3</div>
+    <div class="meine_schrift">
+        <h1 class="meine_schrift">Regeln Nr. 2 und 3</h1>
+        <p class="meine_schrift">Regeln Nr.1 und 4</p>
+    </div>
+
+    <div id=“div1“>
+        <h1>Regeln Nr. 2</h1>
+        <p id="ein_element">Regeln Nr. 1 und 5</p>
+        <p id="element_zwei">Regeln Nr 1.</p>
+    </div>
+</body>
+
+</html>
