@@ -120,3 +120,26 @@ SELECT brand, model, condition, color, price FROM cars
 
 
 
+/*OR
+
+Exercise 14: Find the brand, model, condition and price of cars
+		where the price is less than $250,000
+		or the brand is Porsche
+		additional: only show cars with condition >3*/
+
+SELECT brand, model, condition, price FROM cars
+	WHERE (price < 250000
+	OR brand = 'Porsche')
+	AND condition > 3;
+
+
+/*Exercise 15: Search for brand, model, color, year and price of cars
+		where the color is a shade of red
+		or the year is between 1960 and 1969
+		and sold is false*/
+
+SELECT brand, model, color, year, price FROM cars
+	WHERE color LIKE '%red%'
+	OR year BETWEEN 1960 AND 1969
+	AND sold is FALSE;
+
