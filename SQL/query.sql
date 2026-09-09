@@ -218,3 +218,36 @@ SELECT brand, model, year, sold FROM cars
   AND SOLD IS NOT TRUE;
 
 
+
+/*ORDER BY Operator
+
+Exercise 22:
+	Select the brand, model and year from the cars table order by the brand*/
+
+SELECT brand, model, year FROM cars
+	ORDER BY brand DESC, year;
+
+
+
+/*Exercise 23:
+	Select the brand, model, condition and price from cars
+		order the table by condition in descending order
+		and by price in ascending order*/
+
+SELECT brand, model, condition, price FROM cars
+	WHERE sold IS FALSE
+	ORDER BY condition DESC, price;
+
+
+
+/*Exercise 24:
+		Select the brand, model, condition and price from cars
+		where the car is not sold
+		and the condition is not 5
+		order the table by condition in descending order
+		and by price in ascending order*/
+
+SELECT brand, model, condition, price FROM cars
+	WHERE sold IS FALSE
+	AND condition != 5
+	ORDER BY condition DESC, price;
