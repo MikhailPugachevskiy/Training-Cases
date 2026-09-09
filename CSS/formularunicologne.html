@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kundenformular – Universität zu Köln</title>
+
+    <link rel="stylesheet" href="formularunicologne.css">
+</head>
+
+<body>
+
+    <header class="uni-header">
+        <div class="uni-header-inner">
+
+            <img class="uni-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/15/Siegel_Uni_K%C3%B6ln_%28blau%29.svg"
+                alt="Siegel der Universität zu Köln">
+
+            <div>
+                <p class="uni-brand">Universität zu Köln</p>
+                <p class="uni-subtitle">Kundenregistrierung</p>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="page">
+
+        <section class="form-card">
+            <h1 class="form-title">Kundenregistrierung</h1>
+            <p class="form-intro">
+                Bitte füllen Sie die folgenden Felder aus.
+            </p>
+
+            <form action="check.php" method="post" enctype="multipart/form-data">
+
+                <table class="form-table">
+
+                    <tr>
+                        <th colspan="2">Persönliche Angaben</th>
+                    </tr>
+
+                    <tr>
+                        <td><label for="vorname">Vorname:</label></td>
+                        <td><input type="text" id="vorname" name="vorname"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="nachname">Nachname:</label></td>
+                        <td><input type="text" id="nachname" name="nachname"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="land">Land:</label></td>
+                        <td><input type="text" id="land" name="land" placeholder="Deutschland"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="username">Username:</label></td>
+                        <td><input type="text" id="username" name="username"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="email">E-Mail:</label></td>
+                        <td><input type="email" id="email" name="email"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="webseite">Webseite:</label></td>
+                        <td><input type="url" id="webseite" name="webseite"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="passwort">Passwort:</label></td>
+                        <td><input type="password" id="passwort" name="passwort"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Newsletter:</td>
+                        <td>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" id="ja" name="newsletter" value="ja">
+                                    ja
+                                </label>
+
+                                <label class="radio-option">
+                                    <input type="radio" id="nein" name="newsletter" value="nein">
+                                    nein
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="nachricht">Ihre Nachricht:</label></td>
+                        <td>
+                            <textarea id="nachricht" name="nachricht" rows="5"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="kontakt">Kontaktmöglichkeit:</label></td>
+                        <td>
+                            <select name="Kontakt" id="kontakt">
+                                <option>Hier auswählen</option>
+                                <option>Telefon</option>
+                                <option>E-Mail</option>
+                                <option>Internet</option>
+                                <option>Instant Messaging</option>
+                                <option>Fax</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2">Weitere Angaben</th>
+                    </tr>
+
+                    <tr>
+                        <td><label for="wunschtermin">Wunschtermin:</label></td>
+                        <td><input type="datetime-local" id="wunschtermin" name="wunschtermin"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="wunschfarbe">Wunschfarbe:</label></td>
+                        <td><input type="color" id="wunschfarbe" name="wunschfarbe"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="zufriedenheit">Zufriedenheit:</label></td>
+                        <td>
+                            <input type="range" id="zufriedenheit" name="zufriedenheit" min="1" max="6" step="1"
+                                value="3">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="rubrik">Lieblingsrubrik:</label></td>
+                        <td>
+                            <input list="Rubrik" id="rubrik" name="rubrik">
+                            <datalist id="Rubrik">
+                                <option value="Technik">
+                                <option value="Wirtschaft">
+                                <option value="Kultur">
+                                <option value="Sport">
+                            </datalist>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="datei">Datei:</label></td>
+                        <td><input type="file" id="datei" name="datei"></td>
+                    </tr>
+
+                </table>
+
+                <div class="form-actions">
+                    <input type="reset" value="Löschen">
+                    <input type="submit" value="Senden">
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="uni-footer">
+        Universität zu Köln
+    </footer>
+
+</body>
+
+</html>

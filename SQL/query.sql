@@ -118,3 +118,5 @@ SELECT brand, model, condition, color, price FROM cars
 	AND condition BETWEEN 1 AND 3
 	AND color LIKE '%red%';
 
+
+
