@@ -279,3 +279,24 @@ SELECT brand, model, color, price FROM cars
 	AND sold IS FALSE
 	ORDER BY price
 	LIMIT 5;
+
+
+
+/*COUNT and SUM
+
+Exercise 27:
+	Count the number of cars
+		where sold is true*/
+
+SELECT COUNT(*) FROM cars
+	WHERE sold IS TRUE;
+
+
+
+/*Exercise 28:
+	Sum the price of cars
+		where sold is true
+	Use the alias total_earnings in your output*/
+
+SELECT SUM(price) AS total_earnings FROM cars
+	WHERE sold IS TRUE;
