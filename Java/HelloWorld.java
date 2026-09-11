@@ -1,4 +1,5 @@
-//Übungsaufgabe 1: Entwickeln Sie ein erstes "Hello World" Java-Programm.
+//Übungsaufgabe 2: 
+// Entwickeln Sie ein erstes "Hello World" Java-Programm.
 
 public class HelloWorld {
 
