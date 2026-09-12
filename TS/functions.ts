@@ -1,3 +1,4 @@
+//Functions
 const result = loopPrint(10, "count:", false);
 
 function loopPrint(count: number, text: string, postfix: boolean): boolean {

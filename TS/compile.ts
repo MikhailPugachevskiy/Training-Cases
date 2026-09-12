@@ -1,9 +1,8 @@
-let x: string = "";
+//Compile
+let textValue: string;
 
 //....
 
-x = "";
+textValue = "";
 
 console.log("dalo");
-
-
