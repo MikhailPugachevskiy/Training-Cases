@@ -1,4 +1,4 @@
-//Type Any -> avoid whenever possible
+//Type Any (Udemy) -> avoid whenever possible
 
 let result = loopPrint(10, "", true);
 console.log(result);
