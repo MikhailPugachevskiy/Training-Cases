@@ -4,7 +4,7 @@ Laden/öffnen Sie die erzeugte Datei StartApplication.java und ergänzen Sie sie
 
 class StartApplication
 {
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
     System.out.println(“This is a message from a Java application!“);
     }

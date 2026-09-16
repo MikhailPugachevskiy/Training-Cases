@@ -1,3 +1,13 @@
+/*public class HelloWorld {
+
+	public static void main(String args[]) {
+		String str1, str2;
+		str1 = "Hello World!";
+		str2 = "My Java Program!";
+		System.out.printIn(str1 + " " + str2); => Terminal (Eclipse): Hello World! My Java Program!
+	}
+} */
+
 //Übungsaufgabe 2: 
 // Entwickeln Sie ein erstes "Hello World" Java-Programm.
 
@@ -43,5 +53,5 @@ public class HelloWorld {
         int result;
         result = berechneProdukt(a,b);
         System.out.println("Das Ergebnis lautet: " +result); 
-}
+	}
 }
