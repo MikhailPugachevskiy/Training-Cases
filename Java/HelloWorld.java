@@ -8,7 +8,7 @@
 	}
 } */
 
-//Übungsaufgabe 2: 
+//Übungsaufgabe 1.2: 
 // Entwickeln Sie ein erstes "Hello World" Java-Programm.
 
 public class HelloWorld {

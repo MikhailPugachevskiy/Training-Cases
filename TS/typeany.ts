@@ -1,4 +1,5 @@
 //Type Any -> avoid whenever possible
+
 let result = loopPrint(10, "", true);
 console.log(result);
 

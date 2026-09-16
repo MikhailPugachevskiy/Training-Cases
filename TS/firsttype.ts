@@ -1,3 +1,5 @@
+//First Type
+
 let x: number = 0;
 x = 1;
 console.log(typeof x);

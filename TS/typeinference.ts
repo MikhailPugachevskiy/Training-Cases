@@ -1,4 +1,5 @@
-//Type Inference
+//Type Inference (Udemy)
+
 const count = 10;
 const text = "count: ";
 let postfix = true;
