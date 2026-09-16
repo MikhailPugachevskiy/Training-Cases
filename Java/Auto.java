@@ -1,4 +1,4 @@
-//Übungsaufgabe 2.3
+//Übungsaufgabe 1.3
 /*Erstellen Sie eine Java-Klasse Auto. Ihr Programm sollte mit einer
 main-Methode ausgestattet sein und den User begrüßen. 
 Integrieren Sie bitte sinnvolle Attribute sowie Methoden in die Klasse Auto!*/
