@@ -5,6 +5,27 @@ Integrieren Sie bitte sinnvolle Attribute sowie Methoden in die Klasse Auto!*/
 
 public class Auto {
 
+	//Hauptprogramm
+	public static void main(String args[]) {
+		System.out.println("Willkommen.....Hier k�nnen Autos verwaltet werden.");
+		Auto meinAuto = new Auto(54412, "VW", "Golf", "rot", false);		
+		gebeAutoFarbeAus(meinAuto); 
+		lackiereAuto(meinAuto, "grau");
+		gebeAutoFarbeAus(meinAuto); 
+	}
+
+//Übungsaufgabe 2.1
+/*Erweitern Sie Ihr Projekt, um eine Klasse Auto der Sie geeignete Attribute mit geeigneten Typen zuordnen. Ordnen Sie diese Klasse einem selbstgewählten Java-Package zu. */
+
+Package fortbewegungsmittel;
+
+	public class Auto
+	{
+		public int ps;
+		public char laenderkennzeichen;
+		public double verbrauchAuf100Km;
+	}
+
 	//Instanzvariable
 	int vin; //Fahrgestellnummer
 	String marke;
@@ -28,15 +49,6 @@ public class Auto {
 	public static void lackiereAuto(Auto auto, String neueFarbe) {
 		System.out.println("Auto wird umlackiert mit der Farbe: " + neueFarbe); 
 		auto.farbe = neueFarbe;
-	}
-	
-	//Hauptprogramm
-	public static void main(String args[]) {
-		System.out.println("Willkommen.....Hier k�nnen Autos verwaltet werden.");
-		Auto meinAuto = new Auto(54412, "VW", "Golf", "rot", false);		
-		gebeAutoFarbeAus(meinAuto); 
-		lackiereAuto(meinAuto, "grau");
-		gebeAutoFarbeAus(meinAuto); 
 	}
 	
 }
