@@ -26,6 +26,17 @@ Package fortbewegungsmittel;
 		public double verbrauchAuf100Km;
 	}
 
+//Übungsaufgabe 2.2
+/*Erweitern Sie Ihre Klasse Auto um eine Methode public static void hupen(). Diese Methode soll beim Aufruf nur "HUUUUP" ausgeben.*/
+
+			public static void hupen() {
+				System.out.printIn("HUUUUP");
+			}
+
+			public static void main(String[] args) {
+				hupen();
+			}
+
 	//Instanzvariable
 	int vin; //Fahrgestellnummer
 	String marke;
