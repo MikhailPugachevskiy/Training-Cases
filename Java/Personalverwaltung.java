@@ -1,4 +1,4 @@
-//Kapitel 2: Objektorientierung
+//Vorlesung 2: Grundlegende Konzepte von Objekt-Orientierung: Klasse, Objekt, Attribut, Methode, Beziehung
 
 public class Personalverwaltung {
 	
