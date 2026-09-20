@@ -1,12 +1,6 @@
 import "./styles.css";
-
-function Greeter() {
-    return <h1>HELLO!</h1>;
-}
-
-function Dog() {
-    return <p>WOOF!!!</p>;
-}
+import Greeter from "./Greeter";
+import Dog from "./Dog";
 
 export default function App() {
     return (
@@ -15,6 +9,11 @@ export default function App() {
             <Dog />
             <Dog />
             <Dog />
+            <Greeter />
+            <Greeter />
+            <Greeter />
+            <Greeter />
+            <Greeter />
             <Greeter />
             <Greeter />
         </div>
