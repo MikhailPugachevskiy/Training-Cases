@@ -1,6 +1,7 @@
-//Vorlesung 1: Einführung
+//Vorlesung 1&2: 
+// Grundlegende Konzepte von Objekt-Orientierung: Klasse, Objekt, Attribut, Methode, Beziehung
 
-//Kapitel 1: Variablen, Datentypen, Attribute, Methoden
+//Kapitel 2: Variablen, Datentypen, Attribute, Methoden
 
 /*public class HelloWorld {
 
