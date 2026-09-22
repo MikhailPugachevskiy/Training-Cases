@@ -22,17 +22,17 @@ public class HelloWorld {
 	public static void berechneSumme(int a, int b) {
 		int summe;
 		summe = a + b;
-		System.out.println("Die Summe betr�gt: " +summe); 
+		System.out.println("Die Summe betraegt: " +summe); 
 	}
 	
-	//Konzept von Overloading (Methoden wird �berladen)
+	//Konzept von Overloading (Methoden wird ueberladen)
 	public static void berechneSumme(int a, int b, int c) {
 		int summe;
 		summe = a + b + c;
-		System.out.println("Die Summe betr�gt: " +summe); 
+		System.out.println("Die Summe betraegt: " +summe); 
 	}
 	
-	//Eine Methode mit R�ckgabewert (= funktionalen Programmierung)
+	//Eine Methode mit Rueckgabewert (= funktionalen Programmierung)
 	public static int berechneProdukt(int x, int y) {
 		int produkt;
 		produkt = x * y;
@@ -47,7 +47,7 @@ public class HelloWorld {
 		boolean isIn;
 		isIn = true; 
 		firstString = "Hello World!";
-        str2 = "Workshop Uni K�ln";
+        str2 = "Workshop Uni Koeln";
         System.out.println(index2 +" "+ firstString +" "+ str2); */
 		int a,b,c; 
 		a=5;   //Zuweisungsoperator 

@@ -120,6 +120,7 @@ public class ArrayTester {
 
 	public static void generate2DimArray() {
 		int[][] my2DimArray = new int[2][3];
+		
 		//Alternative Schreibweise
 		int[][] my2DimContainer = new int[][]{{randomInt(),randomInt(),randomInt()},
 			                                   {randomInt(),randomInt(),randomInt()}}; 		
@@ -143,23 +144,25 @@ public class ArrayTester {
 		myArray[0] = 34;
 		myArray[1] = 100;
 		myArray[2] = 300; 
+		
 		//Alternative Schreibweise
 		int[] myArray2 = new int[] {45, 32, -100, 1000, 678}; 
 		int size = myArray.length; 
-		System.out.println("Das Array hat eine L�nge von "+ size); 
+		System.out.println("Das Array hat eine Laenge von "+ size); 
+
 		//Klassische for-Schleife
-		System.out.println("Die Ausgabe erfolgt �ber die normale for-Schleife:"); 
+		System.out.println("Die Ausgabe erfolgt ueber die normale for-Schleife:"); 
 		double quersumme=0; 
 		for(int i=0; i<3; i++) {
 			System.out.print(myArray[i] +"|"); 
 			quersumme = quersumme + myArray[i]; 
 		}
-		System.out.println("Die Quersumme betr�gt: "+ quersumme); 
+		System.out.println("Die Quersumme betraegt: "+ quersumme); 
 		double mittelwert = quersumme / myArray.length; 
-		System.out.println("Der Mittelwert betr�gt: "+ mittelwert); 
+		System.out.println("Der Mittelwert betraegt: "+ mittelwert); 
 		//for-each Schleife
 		System.out.println(); 
-		System.out.println("Die Ausgabe erfolgt nun �ber die for-each Schleife:"); 
+		System.out.println("Die Ausgabe erfolgt nun ueber die for-each Schleife:"); 
 		for(int idx: myArray2) {
 			System.out.print(idx +"|");
 		}
@@ -167,11 +170,11 @@ public class ArrayTester {
 	
 	public static void arrayFiller() {
 		myScanner = new Scanner(System.in); 
-		System.out.print("Wie gro� soll das int-Array werden?");
+		System.out.print("Wie gross soll das int-Array werden?");
 		int len = myScanner.nextInt(); 
 		int[] myArray = new int[len]; 
 		int input=0; 
-		//Starte try-Block -> hier wird die kritische Operation get�tigt
+		//Starte try-Block -> hier wird die kritische Operation getaetigt
 		try {
 		 for(int i=0; i<myArray.length; i++) {
 			 System.out.print(i +". Zahl: "); 
@@ -185,7 +188,7 @@ public class ArrayTester {
 			System.out.println(); 
 			arrayFiller(); 
 		}
-		//Optional ein finally-Block zum Aufr�umen 
+		//Optional ein finally-Block zum Aufraeumen 
 		finally {
 			myScanner.close(); 
 		}
@@ -198,7 +201,7 @@ public class ArrayTester {
 		Person[] myPersons = new Person[100]; 
 		myPersons[0] = new Person("Donald", "Duck", "Entenstr. 1", "12345", "Entenhausen", "0221/3423");
 		myPersons[1] = new Person("Daisy", "Duck", "Entenstr. 1", "12345", "Entenhausen", "0173/3434");
-		myPersons[2] = new Person("Daniel", "D�sentrieb", "Erfinderstr. 100", "12345", "Entenhausen", "0172/45455");
+		myPersons[2] = new Person("Daniel", "Duesentrieb", "Erfinderstr. 100", "12345", "Entenhausen", "0172/45455");
 	    for(Person idx: myPersons) {
 	    	if(idx instanceof Person) System.out.println("OK"); 
 	    	else System.out.println("not a person object"); 
@@ -216,11 +219,12 @@ public class ArrayTester {
 	  //randomInt();
 	  doubleArray(); 
 	  doubleRandomArray(); 
+
 	  //Aufruf des Konstruktors
 	  ArrayTester testArray = new ArrayTester(10, true);
 	  testArray.arrayOperations(); 
-	  System.out.println("Das Minimum betr�gt: "+ testArray.getMin());
-	  System.out.println("Das Maximum betr�gt: "+ testArray.getMax()); 
+	  System.out.println("Das Minimum betraegt: "+ testArray.getMin());
+	  System.out.println("Das Maximum betraegt: "+ testArray.getMax()); 
 	}
 	
 }

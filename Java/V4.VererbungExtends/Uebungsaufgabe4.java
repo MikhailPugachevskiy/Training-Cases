@@ -3,24 +3,22 @@
 /*Übungsaufgabe 4.1:
 Betrachten Sie eine beliebige Vererbungshierarchie zwischen drei Klassen (z.B. Fahrzeug als Oberklasse von Auto als Oberklasse von Cabrio).
 Realisieren Sie diese drei Klassen (mit jeweils mind. einem Attribut)
-und die Vererbungsbeziehungen. */
+und die Vererbungsbeziehungen. -> nehmen aus Datei "Auto2.java"*/
 
-/*Übungsaufgabe 4.2:
-Die Klasse Auto soll die Geschwindigkeit sowohl in „km pro Stunde“ als auch in „Meilen pro Stunde“ zurückgeben können (z.B. in der Methode getGeschwindigkeit(..)).
-Läßt sich das durch Überladen oder Überschreiben von Methoden erreichen?
-Gibt es Alternativen?*/
-
-//Abstrakte Klassen sind Klassen, die nicht instanzierbar sind
+//Abstrakte Klassen sind Klassen, die nicht instanzierbar sind -> nehmen aus Datei "Fahrzeug.java"
 public abstract class Fahrzeug {
 	
 	public float geschwindigkeit;
-	public String anzahlSitzpl�tze; 
+	public String anzahlSitzplaetze; 
 	
 	//Abstrakte Methoden
 	public abstract void starteMotor();
 	public abstract void stoppeMotor(); 
 
 }
+
+//...und die Vererbungsbeziehungen -> nehmen aus Datei "Cabrio.java"
+
 
 public class Auto2 extends Fahrzeug {
 	
@@ -72,8 +70,8 @@ public class Cabrio extends Auto2{
 	
 	public static void main(String args[]) {
 		Cabrio meinCabrio = new Cabrio(90f, "rot");
-		System.out.println("Mein Cabrio f�hrt in km/h: "+meinCabrio.getGeschwindigkeit(meinCabrio));
-		System.out.println("Mein Cario f�hrt in mph: "+meinCabrio.getGeschwindigkeit(meinCabrio, "meilen")); 
+		System.out.println("Mein Cabrio faehrt in km/h: "+meinCabrio.getGeschwindigkeit(meinCabrio));
+		System.out.println("Mein Cario faehrt in mph: "+meinCabrio.getGeschwindigkeit(meinCabrio, "meilen")); 
 		System.out.println("Mein Cabrio hat die Verdeckfarbe: " +meinCabrio.getVerdeckfarbe()); 
 	}
 

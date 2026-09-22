@@ -7,6 +7,8 @@ löschen Sie das Element an Position 1
 und löschen Sie ein vorher eingefügtes Objekt anhand der Referenz.
 Lassen Sie sich zwischendurch die Anzahl Elemente ausgeben.*/
 
+
+
 import java.util.*; 
 
 public class AutoVector {
@@ -22,6 +24,8 @@ public class AutoVector {
 		myAutoVector.addElement(a1);
 		myAutoVector.addElement(a2);
 		myAutoVector.addElement(a3);
+
+		//Bezug zu Datei "Auto.java"
 		
 		Enumeration<Auto> e = myAutoVector.elements();
 		while(e.hasMoreElements()) {
@@ -29,7 +33,7 @@ public class AutoVector {
 			System.out.println("Marken: "+ auto.getMarke()); 
 		}
 			
-		System.out.println("Element an Position 1 wird gel�scht...");
+		System.out.println("Element an Position 1 wird geloescht...");
 		myAutoVector.removeElementAt(1); 	
 		e = myAutoVector.elements();
 		while(e.hasMoreElements()) {

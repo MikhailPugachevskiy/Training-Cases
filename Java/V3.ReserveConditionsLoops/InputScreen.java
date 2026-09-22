@@ -1,7 +1,7 @@
 //Vorlesung 3: 
 // Grundelemente der Programmierung: Reservierte Wörter der Sprache, Verzweigung zur bedingten Ausführung, Schleifen zur wiederholten Ausführung
 
-/* Eingabe �ber die Tastatur (System.in)
+/* Eingabe über die Tastatur (System.in)
  * Kontrollfluss (if-else if-else / switch)
  * Schleifen (for, while, do-while) 
  */
@@ -23,7 +23,7 @@ public class InputScreen {
 			result = counter * result;
 			counter++;
 		 }
-	    System.out.println("Die Fakult�t von "+ inputNum +" betr�gt " +result); 	
+	    System.out.println("Die Fakultaet von "+ inputNum +" betraegt " +result); 	
 	}
 	
 	
@@ -32,12 +32,12 @@ public class InputScreen {
 		myScanner2 = new Scanner(System.in); 
 		  String inputStr; 
 		   do {
-	         	System.out.println("1. Berechnung der Fakult�t einer Zahl - Auswahltaste A");
+	         	System.out.println("1. Berechnung der Fakultaet einer Zahl - Auswahltaste A");
 		        System.out.println("2. Funktion 2 - Auswahltaste B");
 		        System.out.println("3. Funktion 3 - Auswahltaste C");
 		        System.out.println("------------------------------"); 
 		        System.out.println("Das Programm kann mit (E)nde abgebrochen werden");
-		        System.out.println("Bitte t�tigen Sie eine Auswahl!"); 
+		        System.out.println("Bitte taetigen Sie eine Auswahl!"); 
 		        inputStr = myScanner2.nextLine(); 
 		        switch(inputStr) {
 		        case ("A") : {
@@ -52,7 +52,7 @@ public class InputScreen {
 		        	        marker=false;
 		        	        break;
 		        }
-		        default : System.out.println("Diese Eingabe wird nicht unterst�tzt!"); break;
+		        default : System.out.println("Diese Eingabe wird nicht unterstuetzt!"); break;
 		        }
 		    } while(marker);
 		   
@@ -69,7 +69,7 @@ public class InputScreen {
 	
 	public static void checkNumbers(int i1, int i2) {
 		if(i1<i2) System.out.println("Zahl 1 ist kleiner als Zahl 2."); 
-		 else if(i1>i2) System.out.println("Zahl 1 ist gr��er als Zahl 2.");
+		 else if(i1>i2) System.out.println("Zahl 1 ist groesser als Zahl 2.");
 		  else {
 			     System.out.println("Zahl1 ist echtgleich zu Zahl2."); 
 			     evenOddNumbersCheck(i1); 

@@ -1,8 +1,8 @@
-//Abstrakte Klassen sind Klassen, die nicht instanzierbar sind
+//Abstrakte Klassen sind Klassen, die nicht instanzierbar sind -> benötgigt für Übungsaufgave 4.1
 public abstract class Fahrzeug {
 	
 	public float geschwindigkeit;
-	public String anzahlSitzpl�tze; 
+	public String anzahlSitzplaetze; 
 	
 	//Abstrakte Methoden
 	public abstract void starteMotor();

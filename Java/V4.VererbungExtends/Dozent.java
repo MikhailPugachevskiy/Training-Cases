@@ -1,3 +1,5 @@
+//Vorlesung 4: Vererbung/Extends
+
 import java.util.*; 
 /*Vererbung wird in Java mit dem keyword: extends
  *In Java darf eine Unterklasse (hier:Dozent) eine
@@ -10,15 +12,25 @@ public class Dozent extends Person {
 	String raum; 
 	static Scanner myScanner;
 
-	//Konstruktor
+	//Konstruktor -> Hier muss die Datei "Person.java" betrachtet werden
 	public Dozent(String vorname, String nachname, String anschrift, String plz, String ort, 
 			         String telnr, String ma, String vt, String ra) {
+
 		//Aufruf des Superkonstruktors
 		super(vorname, nachname, anschrift, plz, ort, telnr);
 		this.mitarbeiternummer = ma;
 		this.vorlesungstitel = vt;
 		this.raum = ra; 
 	}
+	
+	
+	/*public String vorname; //Kopieren von Datei "Person.java"
+	public String nachname;
+	public String anschrift;
+	public String plz;
+	public String ort;
+	public String telnr;*/
+
 
     public static Dozent erstelleDozent() {
         myScanner = new Scanner(System.in); 
@@ -50,7 +62,8 @@ public class Dozent extends Person {
 	
 	
 	public static void main(String args[]) {
-		//Arrays (= Felder) sind Datenstrukturen, die vorab eine feste L�nge aufweisen.
+
+		//Arrays (= Felder) sind Datenstrukturen, die vorab eine feste Laenge aufweisen.
 		Dozent[] meineDozenten = new Dozent[2]; 
 	    //Dozent d1 wird angelegt
 		Dozent d1;
@@ -60,6 +73,7 @@ public class Dozent extends Person {
 		Dozent d2;
 		d2 = erstelleDozent(); 
 		meineDozenten[1] = d2;
+		
 		//Ausgabe aller Objekte im Array meineDozenten
 		System.out.println("Jetzt erfolgt die Ausgabe:"); 
 		for(int index=0; index<2; index++) {

@@ -8,10 +8,14 @@ public class MyVector {
 	
    public static Scanner myScanner; 
 
+//Bezug zu Datei "Person.java"
+
    public static void generateVector() {
 	  myScanner = new Scanner(System.in); 
 	  Vector<Person> myTestVector = new Vector<Person>(); 
 	  
+//Kopiert aus Datei "MyStack.java"
+
 	  Person person1 = new Person("Donald", "Duck", "Entenstr.1", "12345", "Entenhausen", "0221121");
 	  Person person2 = new Person("Daisy", "Duck", "Musterstr.2", "32232", "Entenhausen", "3244344");
 	  
@@ -22,7 +26,7 @@ public class MyVector {
 	  
 	  myTestVector.insertElementAt(person3, 1); 
 	  
-	  //Size als eine Methode liefert die L�nge von einem Vector
+	  //Size als eine Methode liefert die Laenge von einem Vector
 	  int lengthOfMyVector = myTestVector.size(); 
 	  System.out.println("Sie haben "+ lengthOfMyVector +" Personen gespeichert."); 
 	  
@@ -33,7 +37,7 @@ public class MyVector {
 		  System.out.println(myPerson.getPersonData()); 
 	  }
 	  
-	  System.out.print("Welches Element m�chten Sie l�schen:");
+	  System.out.print("Welches Element moechten Sie loeschen:");
 	  int pos = myScanner.nextInt(); 
 	  
 	  myTestVector.removeElementAt(pos);
@@ -43,8 +47,8 @@ public class MyVector {
 		  System.out.println(myTestVector.elementAt(i).getPersonData()); 
 	  }
 	 
-	  //Clear l�scht alle Elemente im Vector
-	  System.out.println("L�schoperation startet,...");
+	  //Clear loescht alle Elemente im Vector
+	  System.out.println("Loeschoperation startet,...");
 	  myTestVector.clear(); 
 	  
 	  lengthOfMyVector = myTestVector.size(); 
@@ -62,7 +66,7 @@ public class MyVector {
 	   testVector.addElement(1000);
 	   int value=10003;
 	   isIn = testVector.contains(value);
-	   System.out.println("Suchvorgang startet f�r den Eintrag:" +value+"."); 
+	   System.out.println("Suchvorgang startet fuer den Eintrag:" +value+"."); 
 	   if(isIn==false) System.out.println("Eintrag wurde nicht gefunden!");
 	   else if(isIn==true) System.out.println("Eintrag wurde gefunden!");	   
    }

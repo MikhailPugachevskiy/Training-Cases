@@ -14,7 +14,7 @@ public class TwoDimArrayTester {
 		return value; 
 	}
 	
-	//Array wird bef�llt und ausgegeben
+	//Array wird befaellt und ausgegeben
 	public void arrayFillerPrinter() {
 		 for(int i=0; i<myArr.length; i++) { 
    		  for(int j=0; j<myArr[i].length; j++) {

@@ -7,7 +7,7 @@ public class Auto {
 
 	//Hauptprogramm
 	public static void main(String args[]) {
-		System.out.println("Willkommen.....Hier k�nnen Autos verwaltet werden.");
+		System.out.println("Willkommen.....Hier koennen Autos verwaltet werden.");
 		Auto meinAuto = new Auto(54412, "VW", "Golf", "rot", false);		
 		gebeAutoFarbeAus(meinAuto); 
 		lackiereAuto(meinAuto, "grau");
