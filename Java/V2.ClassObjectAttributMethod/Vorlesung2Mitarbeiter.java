@@ -10,6 +10,7 @@ public class Mitarbeiter {
 	String nachname;
 	String anschrift;
 	boolean istExternerMitarbeiter; 
+	
 	//Klassenvariable
 	static int anzahlMitarbeiter; 
 	
