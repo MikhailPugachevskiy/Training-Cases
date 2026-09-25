@@ -3,6 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const data = [
+  { item: "eggs", quantity: 12, completed: false },
+  { item: "milk", quantity: 1, completed: true },
+  { item: "chicken breasts", quantity: 4, completed: false },
+  { item: "carrots", quantity: 6, completed: true },
+];
+
 function App() {
   const [count, setCount] = useState(0)
 
