@@ -46,4 +46,23 @@ SELECT Title, Year FROM movies LIMIT 5;
 
 
 
+/*Übung 3: Abfragen mit Bedingungen
 
+Aufgaben
+
+1. Finde alle Toy-Story-Filme
+2. Finde alle Filme, die von John Lasseter Regie geführt wurden
+3. Finde alle Filme (und den Regisseur), die nicht von John Lasseter Regie geführt wurden
+4. Finde alle WALL-*-Filme */
+
+-- 1. Alle Toy-Story-Filme
+SELECT * FROM movies WHERE Title LIKE "%Toy Story%";
+
+-- 2. Filme von John Lasseter
+SELECT * FROM movies WHERE Director = "John Lasseter";
+
+-- 3. Filme NICHT von John Lasseter
+SELECT * FROM movies WHERE Director != "John Lasseter";
+
+-- 4. Alle WALL-*-Filme
+SELECT * FROM movies WHERE Title LIKE "WALL-%";
