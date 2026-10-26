@@ -48,8 +48,6 @@ SELECT Title, Year FROM movies LIMIT 5;
 
 /*Übung 3: Abfragen mit Bedingungen
 
-Aufgaben
-
 1. Finde alle Toy-Story-Filme
 2. Finde alle Filme, die von John Lasseter Regie geführt wurden
 3. Finde alle Filme (und den Regisseur), die nicht von John Lasseter Regie geführt wurden
@@ -66,3 +64,24 @@ SELECT * FROM movies WHERE Director != "John Lasseter";
 
 -- 4. Alle WALL-*-Filme
 SELECT * FROM movies WHERE Title LIKE "WALL-%";
+
+
+
+/*Übung 4: Filtern & Sortieren Von Abfrageergebnissen
+
+1. Liste alle Regisseure von Pixar-Filmen (alphabetisch), ohne Duplikate
+2. Liste die letzten vier Pixar-Filme (vom neuesten zum ältesten)
+3. Liste die ersten fünf Pixar-Filme alphabetisch sortiert
+4. Liste die nächsten fünf Pixar-Filme alphabetisch sortiert */
+
+-- 1. Alle Regisseure alphabetisch, ohne Duplikate
+SELECT DISTINCT Director FROM movies ORDER BY Director ASC;
+
+-- 2. Die letzten vier Filme (neueste zuerst)
+SELECT * FROM movies ORDER BY Year DESC LIMIT 4;
+
+-- 3. Die ersten fünf Filme alphabetisch
+SELECT * FROM movies ORDER BY Title ASC LIMIT 5;
+
+-- 4. Die nächsten fünf Filme alphabetisch (Zeilen 6–10)
+SELECT * FROM movies ORDER BY Title ASC LIMIT 5 OFFSET 5;
