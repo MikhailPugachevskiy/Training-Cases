@@ -1,7 +1,5 @@
 /*Übung 5: Wiederholung 
 
-Aufgaben
-
 1. Liste alle kanadischen Städte und ihre Bevölkerungszahlen
 2. Sortiere alle Städte in den USA nach Latitude von Norden nach Süden
 3. Liste alle Städte westlich von Chicago, sortiert von West nach Ost
@@ -72,3 +70,31 @@ FROM movies
 INNER JOIN boxoffice
 ON movies.Id = boxoffice.Movie_id
 ORDER BY Rating DESC;
+
+
+
+/*Übung 7: OUTER Joins
+
+1. Finde die Liste aller Gebäude, die Mitarbeiter haben
+2. Finde die Liste aller Gebäude und ihre Kapazität
+3. Liste alle Gebäude und die unterschiedlichen Mitarbeiter-Rollen in jedem Gebäude (auch leere Gebäude) */
+
+-- 1. Gebäude, die Mitarbeiter haben
+SELECT DISTINCT Building
+FROM employees;
+
+-- oder mit JOIN:
+SELECT DISTINCT Building_name
+FROM buildings
+INNER JOIN employees
+ON buildings.Building_name = employees.Building;
+
+-- 2. Alle Gebäude + Kapazität
+SELECT Building_name, Capacity
+FROM buildings;
+
+-- 3. Alle Gebäude + unterschiedliche Rollen (auch leere Gebäude)
+SELECT DISTINCT Building_name, Role
+FROM buildings
+LEFT JOIN employees
+ON buildings.Building_name = employees.Building;
