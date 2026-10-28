@@ -1,4 +1,4 @@
-/*Übung 5
+/*Übung 5: Wiederholung 
 
 Aufgaben
 
@@ -44,3 +44,31 @@ FROM north_american_cities
 WHERE Country = "United States"
 ORDER BY Population DESC
 LIMIT 2 OFFSET 2;
+
+
+
+/*Ubung 6: Abfragen über mehrere Tabellen mit JOINs
+
+1. Finde die inländischen und internationalen Verkaufszahlen für jeden Film
+2. Zeige die Verkaufszahlen für Filme, die international besser liefen als im Inland
+3. Liste alle Filme nach ihrer Bewertung in absteigender Reihenfolge */
+
+-- 1. Inländische und internationale Verkäufe pro Film
+SELECT Title, Domestic_sales, International_sales
+FROM movies
+INNER JOIN boxoffice
+ON movies.Id = boxoffice.Movie_id;
+
+-- 2. Filme mit höheren internationalen als inländischen Verkäufen
+SELECT Title, Domestic_sales, International_sales
+FROM movies
+INNER JOIN boxoffice
+ON movies.Id = boxoffice.Movie_id
+WHERE International_sales > Domestic_sales;
+
+-- 3. Alle Filme nach Bewertung (absteigend)
+SELECT Title, Rating
+FROM movies
+INNER JOIN boxoffice
+ON movies.Id = boxoffice.Movie_id
+ORDER BY Rating DESC;
