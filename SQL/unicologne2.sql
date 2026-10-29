@@ -98,3 +98,25 @@ SELECT DISTINCT Building_name, Role
 FROM buildings
 LEFT JOIN employees
 ON buildings.Building_name = employees.Building;
+
+
+
+/*Übung 8: NULL-Werte
+
+1. Finde Name und Rolle aller Mitarbeiter, die keinem Gebäude zugewiesen sind
+2. Finde die Namen der Gebäude, in denen keine Mitarbeiter arbeiten. */
+
+-- 1. Mitarbeiter ohne Gebäude-Zuweisung
+SELECT Name, Role
+FROM employees
+WHERE Building IS NULL;
+
+-- 2. Gebäude ohne Mitarbeiter
+SELECT Building_name
+FROM buildings
+LEFT JOIN employees
+ON buildings.Building_name = employees.Building
+WHERE employees.Building IS NULL;
+
+
+
