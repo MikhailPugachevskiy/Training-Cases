@@ -142,3 +142,25 @@ ON movies.Id = boxoffice.Movie_id;
 SELECT Title, Year
 FROM movies
 WHERE Year % 2 = 0;
+
+
+
+/*Übung 10: Abfragen mit Aggregatfunktionen
+
+1. Finde die längste Beschäftigungsdauer eines Mitarbeiters im Studio
+2. Finde für jede Rolle die durchschnittliche Anzahl der Beschäftigungsjahre
+3. Finde die Gesamtzahl der Beschäftigungsjahre in jedem Gebäude */
+
+-- 1. Längste Beschäftigungsdauer
+SELECT MAX(Years_employed) AS Longest_time
+FROM employees;
+
+-- 2. Durchschnittliche Beschäftigungsjahre pro Rolle
+SELECT Role, AVG(Years_employed) AS Average_years
+FROM employees
+GROUP BY Role;
+
+-- 3. Gesamte Beschäftigungsjahre pro Gebäude
+SELECT Building, SUM(Years_employed) AS Total_years
+FROM employees
+GROUP BY Building;
