@@ -91,3 +91,16 @@ ADD Aspect_ratio FLOAT;
 -- 2. Language mit Standardwert hinzufügen
 ALTER TABLE movies
 ADD Language TEXT DEFAULT "English";
+
+
+
+/*Übung 18: Tabellen löschen
+
+1. Entferne die Tabelle Movies
+2. Entferne auch die Tabelle BoxOffice */
+
+-- 1. Movies-Tabelle löschen
+DROP TABLE IF EXISTS Movies;
+
+-- 2. BoxOffice-Tabelle löschen
+DROP TABLE IF EXISTS BoxOffice;
