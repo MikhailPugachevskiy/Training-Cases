@@ -73,3 +73,21 @@ CREATE TABLE IF NOT EXISTS Database (
     Version FLOAT,
     Download_count INTEGER
 );
+
+
+
+/*Übung 17: Tabellen ändern
+
+Die Übungsdatenbank unterstützt nur das Hinzufügen neuer Spalten
+
+1. Füge eine Spalte Aspect_ratio mit Datentyp FLOAT hinzu
+2. Füge eine Spalte Language mit Datentyp TEXT hinzu
+    Standardwert soll English sein */
+
+    -- 1. Aspect_ratio hinzufügen
+ALTER TABLE movies
+ADD Aspect_ratio FLOAT;
+
+-- 2. Language mit Standardwert hinzufügen
+ALTER TABLE movies
+ADD Language TEXT DEFAULT "English";
