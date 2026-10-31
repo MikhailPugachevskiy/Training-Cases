@@ -61,3 +61,26 @@ GROUP BY Role;
 SELECT Building, SUM(Years_employed) AS Total_years
 FROM employees
 GROUP BY Building;
+
+
+
+/*übung 11: Abfragen mit Aggregatfunktionen 
+
+1. Finde die Anzahl der Artists im Studio (ohne HAVING-Klausel)
+2. Finde die Anzahl der Mitarbeiter pro Rolle im Studio
+3. Finde die Gesamtsumme der Beschäftigungsjahre aller Engineers */
+
+-- 1. Anzahl der Artists (ohne HAVING)
+SELECT COUNT(*) AS Number_of_artists
+FROM employees
+WHERE Role = "Artist";
+
+-- 2. Anzahl der Mitarbeiter pro Rolle
+SELECT Role, COUNT(*) AS Number_of_employees
+FROM employees
+GROUP BY Role;
+
+-- 3. Gesamte Beschäftigungsjahre aller Engineers
+SELECT SUM(Years_employed) AS Total_years
+FROM employees
+WHERE Role = "Engineer";
