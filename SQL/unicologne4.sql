@@ -46,7 +46,7 @@ WHERE Title = "Toy Story 8";
 Bereinige die Movies-Tabelle
 
 1. Entferne alle Filme, die vor 2005 veröffentlicht wurden
-2. Andrew Stanton hat das Studio verlassen → entferne alle Filme, die von ihm Regie geführt wurden
+2. Andrew Stanton hat das Studio verlassen → entferne alle Filme, die von ihm Regie geführt wurden */
 
 -- 1. Filme vor 2005 löschen
 DELETE FROM movies
@@ -55,3 +55,21 @@ WHERE Year < 2005;
 -- 2. Filme von Andrew Stanton löschen
 DELETE FROM movies
 WHERE Director = "Andrew Stanton";
+
+
+
+/*Übung 16: Tabellen erstellen
+
+Erstelle eine neue Tabelle
+
+Erstelle eine Tabelle namens Database mit folgenden Spalten:
+    Name → Text (Beschreibung des Datenbanknamens)
+    Version → Gleitkommazahl (aktuelle Version)
+    Download_count → Ganzzahl (Anzahl der Downloads)
+(Keine Constraints erforderlich) */
+
+CREATE TABLE IF NOT EXISTS Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);
