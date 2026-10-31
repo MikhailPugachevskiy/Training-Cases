@@ -84,3 +84,23 @@ GROUP BY Role;
 SELECT SUM(Years_employed) AS Total_years
 FROM employees
 WHERE Role = "Engineer";
+
+
+
+/*Übung 12: Ausführungsreihenfolge 
+
+1. Finde die Anzahl der Filme, die jeder Regisseur gedreht hat
+2. Finde die gesamten inländischen und internationalen Verkaufszahlen, die jedem Regisseur zugeschrieben werden können */
+
+-- 1. Anzahl Filme pro Regisseur
+SELECT Director, COUNT(*) AS Number_of_movies
+FROM movies
+GROUP BY Director;
+
+-- 2. Gesamte Verkäufe pro Regisseur
+SELECT Director, 
+       SUM(Domestic_sales + International_sales) AS Total_sales
+FROM movies
+INNER JOIN boxoffice
+ON movies.Id = boxoffice.Movie_id
+GROUP BY Director;
