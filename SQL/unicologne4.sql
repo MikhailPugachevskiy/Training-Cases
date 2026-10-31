@@ -38,3 +38,20 @@ UPDATE movies
 SET Title = "Toy Story 3",
     Director = "Lee Unkrich"
 WHERE Title = "Toy Story 8";
+
+
+
+/*Übung 15: Zeilen löschen
+
+Bereinige die Movies-Tabelle
+
+1. Entferne alle Filme, die vor 2005 veröffentlicht wurden
+2. Andrew Stanton hat das Studio verlassen → entferne alle Filme, die von ihm Regie geführt wurden
+
+-- 1. Filme vor 2005 löschen
+DELETE FROM movies
+WHERE Year < 2005;
+
+-- 2. Filme von Andrew Stanton löschen
+DELETE FROM movies
+WHERE Director = "Andrew Stanton";
