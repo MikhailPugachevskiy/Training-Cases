@@ -1,0 +1,18 @@
+Terminal
+
+mikha@LENOVOV15IWL UCRT64 ~
+$ ls <=
+ Anwendungsdaten@         ntuser.dat.LOG1
+ Contacts/                NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms
+ Cookies@                 NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms
+ Desktop/                 ntuser.ini
+ Documents/               OneDrive/
+ Downloads/               Pictures/
+...usw.
+
+mikha@LENOVOV15IWL UCRT64 ~
+$ pwd <=
+/c/Users/mikha
+
+cd .. <=
+mikha@LENOVOV15IWL UCRT64 /c/Users
