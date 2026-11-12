@@ -1,8 +1,14 @@
 Terminal
 
+Basics: LS & PWD
+
+List: s to list the contents of current directory
+
 mikha@LENOVOV15IWL UCRT64 ~
 $ ls <=
  Anwendungsdaten@         ntuser.dat.LOG1
+ AppData/                 ntuser.dat.LOG2
+ Apple/                   NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TM.blf
  Contacts/                NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms
  Cookies@                 NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms
  Desktop/                 ntuser.ini
@@ -10,9 +16,23 @@ $ ls <=
  Downloads/               Pictures/
 ...usw.
 
+
 mikha@LENOVOV15IWL UCRT64 ~
+
+Print Working Directory: pwd prints the path to the working directory (where you currently are)
 $ pwd <=
 /c/Users/mikha
 
+
+Change Directory: cd to change and move between folders
+mikha@LENOVOV15IWL UCRT64 ~
+$ cd Apple/ <=
+mikha@LENOVOV15IWL UCRT64 ~/Apple
+$ ls <=
+MobileSync/
+
+cd back up one directory
 cd .. <=
-mikha@LENOVOV15IWL UCRT64 /c/Users
+$ cd ..
+mikha@LENOVOV15IWL UCRT64 ~
+
