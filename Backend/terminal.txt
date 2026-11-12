@@ -2,7 +2,7 @@ Terminal
 
 Basics: LS & PWD
 
-List: s to list the contents of current directory
+List: ls -> to list the contents of current directory
 
 mikha@LENOVOV15IWL UCRT64 ~
 $ ls <=
@@ -19,12 +19,12 @@ $ ls <=
 
 mikha@LENOVOV15IWL UCRT64 ~
 
-Print Working Directory: pwd prints the path to the working directory (where you currently are)
+Print Working Directory: pwd -> prints the path to the working directory (where you currently are)
 $ pwd <=
 /c/Users/mikha
 
 
-Change Directory: cd to change and move between folders
+Change Directory: cd -> to change and move between folders
 mikha@LENOVOV15IWL UCRT64 ~
 $ cd Apple/ <=
 mikha@LENOVOV15IWL UCRT64 ~/Apple
@@ -36,3 +36,17 @@ cd .. <=
 $ cd ..
 mikha@LENOVOV15IWL UCRT64 ~
 
+
+Make Directory: mkdir -> create a new directory or directories
+
+
+Manual: man -> gives information about ls
+
+
+Touch: touch -> create a file or multiple files 
+
+
+Remove: rm -> permanently removes file or files
+
+
+Remove with force: rm-rf -> delete a directory (r = recursive, f = force)
