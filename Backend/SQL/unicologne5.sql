@@ -30,10 +30,24 @@ WHERE salary >
 
 /*Übung 21: Existenz-Tests mit IN / NOT IN
 
-1. Prüft, ob ein Wert in einer dynamischen Liste (aus einer Subquery) enthalten ist*/
+1. Prüfe, ob ein Wert in einer dynamischen Liste (aus einer Subquery) enthalten ist*/
 
 SELECT *, …
 FROM mytable
 WHERE column
     IN / NOT IN (SELECT another_column
                  FROM another_table);
+
+
+
+/*Übung 22: UNION & UNION ALL
+
+1. Hänge die Ergebnisse einer Abfrage an eine andere an*/
+
+SELECT column, another_column
+FROM mytable
+UNION / UNION ALL
+SELECT other_column, yet_another_column
+FROM another_table
+ORDER BY column DESC
+LIMIT n;
