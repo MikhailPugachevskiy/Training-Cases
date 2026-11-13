@@ -25,3 +25,15 @@ WHERE salary >
    (SELECT AVG(revenue_generated)
     FROM employees AS dept_employees
     WHERE dept_employees.department = employees.department);
+
+
+
+/*Übung 21: Existenz-Tests mit IN / NOT IN
+
+1. Prüft, ob ein Wert in einer dynamischen Liste (aus einer Subquery) enthalten ist*/
+
+SELECT *, …
+FROM mytable
+WHERE column
+    IN / NOT IN (SELECT another_column
+                 FROM another_table);
