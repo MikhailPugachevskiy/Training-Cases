@@ -51,3 +51,24 @@ Timeout {
   Symbol(kAsyncContextFrame): undefined
 }
 > HELLO!!!!
+
+
+
+> process <=
+
+> process.version <=
+
+> process.release <=
+{
+  name: 'node',
+  lts: 'Krypton',
+  sourceUrl: 'https://nodejs.org/download/release/v24.20.0/node-v24.20.0.tar.gz',
+  headersUrl: 'https://nodejs.org/download/release/v24.20.0/node-v24.20.0-headers.tar.gz',
+  libUrl: 'https://nodejs.org/download/release/v24.20.0/win-x64/node.lib'
+}
+
+> process.cwd() <=
+'C:\\Program Files\\nodejs'
+
+> process.argv <=
+[ 'C:\\Program Files\\nodejs\\node.exe' ]
