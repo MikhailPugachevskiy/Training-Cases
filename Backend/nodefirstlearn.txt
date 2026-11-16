@@ -1,0 +1,71 @@
+KAPITEL 31 – OUR FIRST BRUSH WITH NODE (Section 31)
+
+1. WAS IST NODE?
+• Node.js = JavaScript-Laufzeitumgebung (Runtime) außerhalb des Browsers
+• Gleiche Sprache für Server-Code, kein Python/Ruby nötig
+• Gebaut wird damit: Webserver, Kommandozeilen-Tools, Desktop-Apps (VS Code!), Spiele, Drohnen-Software u. a.
+
+2. NODE vs. BROWSER-JS
+• Nicht in Node: window, document, DOM-APIs
+• Neu in Node: eingebaute Module (fs, path, os, ...) für Betriebssystem, Dateien und Ordner
+• npm = Node Package Manager: (1) Bibliothek mit Paketen anderer Entwickler, (2) Kommandozeilen-Tool zum Installieren (Details: Section 32)
+
+3. INSTALLATION
+• Download von nodejs.org, empfohlen: LTS-Version
+• Prüfen: node -v und npm -v
+• Nach der Installation Terminal neu starten (sonst "command not found")
+
+4. NODE REPL
+▶ node
+  = startet die REPL (Read – Eval – Print – Loop)
+• Prompt ist >, versteht nur JavaScript, KEINE Shell-Befehle (ls, cd, pwd gehen hier nicht!)
+• .help → Hilfe zu den REPL-Befehlen
+• .exit (oder Strg+C zweimal) → REPL verlassen
+
+5. DATEIEN AUSFÜHREN
+▶ node firstScript.js
+  = führt eine JS-Datei aus, Ausgabe erscheint im Terminal
+• Vorher mit cd in den richtigen Ordner (prüfen: pwd, ls)
+• Fehler "Cannot find module" = falscher Ordner oder falscher Dateiname
+• console.log schreibt ins Terminal, nicht in die Browser-Konsole
+
+6. PROCESS UND ARGV
+• process = globales Objekt, immer verfügbar (kein require nötig)
+• process.argv = Array mit den Kommandozeilen-Eingaben
+  [0] Pfad zu node | [1] Pfad zur Datei | [2], [3], ... eigene Eingaben
+• Alle Werte sind Strings
+▶ node greeter.js Tim Bob
+  → process.argv.slice(2) liefert nur ['Tim', 'Bob']
+  → for...of gibt "Hi there, Tim" und "Hi there, Bob" aus
+
+7. FILE SYSTEM MODULE (fs)
+• Einbinden: const fs = require('fs');
+• Zweck: Dateien und Ordner lesen, anlegen, schreiben
+• Sync-Methoden (…Sync): blockieren die Ausführung, bis fertig
+  fs.mkdirSync('Ordner')              → Ordner anlegen
+  fs.writeFileSync('pfad/datei', '')  → Datei anlegen/überschreiben (2. Parameter = Inhalt, Pflicht!)
+• Async-Methoden: blockieren nicht, Ergebnis kommt per Callback
+  fs.mkdir('Ordner', { recursive: true }, (err) => { if (err) throw err; })
+  fs.readFile('datei.txt', 'utf8', (err, data) => { ... })  → Datei lesen
+  • recursive: true = fehlende Zwischenordner anlegen, kein Fehler wenn vorhanden (wie mkdir -p)
+• Node nutzt einen Thread: async = nicht blockierend, nicht parallel
+• writeFile überschreibt immer, zum Anhängen: fs.appendFile
+• Dateipfade gelten relativ zu dem Ordner, in dem node gestartet wird
+
+8. FEHLERBEHANDLUNG
+• Sync: try { ... } catch (e) { console.log(e) }
+• Async: Fehler kommt als err-Parameter im Callback
+• Häufige Fehlercodes: EEXIST (existiert schon), ENOENT (Ordner/Datei nicht gefunden)
+
+9. PRAXIS: boilerplate.js
+▶ node boilerplate.js Portfolio
+  • Name = process.argv[2], ohne Eingabe Standard 'Project' (|| als Default)
+  • Legt Ordner an, danach index.html, app.js, styles.css (Reihenfolge wichtig!)
+  • try/catch fängt Fehler, z. B. wenn der Ordner schon existiert
+
+10. TYPISCHE FEHLER
+• Datei-Befehl im REPL statt in der Shell
+• Falscher Ordner beim Start von node
+• window/document in Node benutzen
+• writeFileSync ohne Inhalt-Parameter
+• Terminal nach der Installation nicht neu gestartet
