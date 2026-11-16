@@ -1,6 +1,7 @@
-KAPITEL 30 – MASTERING THE TERMINAL 
+KAPITEL 30 – TERMINAL 
 
 1. WARUM TERMINAL?
+• Terminal wirkt wie ein Datei-Navigator, aber per Text statt Maus
 • Speed: Mit Gewöhnung viel schneller als per Maus (GUI)
 • Access: "Hauptleitung" in den Rechner, Zugriff auf Bereiche, die man sonst nicht sieht
 • Tools: Viele Entwickler-Tools (Node, npm, Git) laufen nur per Kommandozeile
@@ -20,17 +21,19 @@ KAPITEL 30 – MASTERING THE TERMINAL
 
 4. ORIENTIERUNG
 • Home Directory = Startort bei neuem Terminal, enthält persönliche Ordner
+  (z. B. Desktop, Documents, Downloads); jeder User hat sein eigenes
 • ~ (Tilde) = Kurzschreibweise für das Home Directory
 
 ▶ ls
   = list, zeigt Inhalt des aktuellen Ordners
-  • ls -a → auch versteckte Dateien (beginnen mit .)
+  • ls -a → auch versteckte Dateien (Name beginnt mit .)
   • ls -l → Langformat mit Details
 
 ▶ pwd
   = print working directory, zeigt den Pfad des AKTUELLEN Ordners
   • Beispiel (Windows/Git Bash): /c/Users/mikha
   • Beispiel (Mac): /Users/name
+• ls und pwd zeigen nur an, sie bewegen dich nicht (dafür cd)
 
 5. NAVIGIEREN
 ▶ cd Desktop/
@@ -46,7 +49,8 @@ KAPITEL 30 – MASTERING THE TERMINAL
 • Absoluter Pfad = beginnt bei der Wurzel /, führt von überall zum selben Ziel
   Beispiel: /Users/name/documents/report.pdf
   Beispiel: ~/Desktop (Home als Startpunkt)
-• Relativer Pfad = abhängig vom aktuellen Ordner
+• Relativer Pfad = abhängig vom aktuellen Ordner, funktioniert nur im richtigen Ordner
+  images/image.png         → Unterordner (./ davor ist optional)
   ./script.js              → Datei im aktuellen Ordner (. = hier)
   ../images/photo.jpg      → eine Ebene höher, dann images/
   ../../projects/projectA  → zwei Ebenen höher
@@ -58,13 +62,15 @@ KAPITEL 30 – MASTERING THE TERMINAL
 ▶ touch purple.txt
   = leere Datei anlegen (auch mehrere möglich), Name kommt vom "Berühren" (Zeitstempel)
 ▶ rm purple.txt
-  = remove, löscht Dateien ENDGÜLTIG (kein Papierkorb!)
+  = remove, löscht Dateien ENDGÜLTIG (kein Papierkorb, nur mit Backup wiederherstellbar)
 ▶ rmdir Plants
-  = löscht nur LEERE Ordner
+  = löscht nur LEERE Ordner (bei Inhalt Fehler)
+▶ rm -r Plants
+  = löscht Ordner samt Inhalt (r = recursive)
+▶ rm -f datei
+  = ohne Rückfrage löschen (f = force); löscht Ordner nicht allein
 ▶ rm -rf Plants
-  = löscht Ordner samt Inhalt
-  • -r = recursive (auch alles darin)
-  • -f = force (ohne Rückfrage)
+  = beides kombiniert, Standard zum Löschen von Ordnern
 
 8. MAN PAGES UND FLAGS
 • Flags/Options = Zusätze mit - hinter dem Befehl, ändern sein Verhalten
