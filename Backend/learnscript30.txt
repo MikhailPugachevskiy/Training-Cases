@@ -1,0 +1,81 @@
+KAPITEL 30 – MASTERING THE TERMINAL 
+
+1. WARUM TERMINAL?
+• Speed: Mit Gewöhnung viel schneller als per Maus (GUI)
+• Access: "Hauptleitung" in den Rechner, Zugriff auf Bereiche, die man sonst nicht sieht
+• Tools: Viele Entwickler-Tools (Node, npm, Git) laufen nur per Kommandozeile
+• Backend-Arbeit ohne Terminal praktisch nicht möglich
+
+2. BEGRIFFE
+• Terminal = textbasierte Oberfläche zum Computer (früher Hardware, heute Software)
+• Shell = Programm im Terminal, das die Befehle ausführt
+• Bash = beliebte Shell (Mac-Standard heute: zsh, Befehle fast gleich)
+• Command Line / Console = umgangssprachlich fast dasselbe
+• Analogie: Geldautomat = Terminal, Software im Automaten = Shell
+
+3. SETUP
+• Mac: eingebaute Terminal-App
+• Windows: Git Bash (im Kurs) oder WSL
+• Erkennung: Prompt mit $ = Shell | Prompt mit > = Node REPL (versteht nur JavaScript!)
+
+4. ORIENTIERUNG
+• Home Directory = Startort bei neuem Terminal, enthält persönliche Ordner
+• ~ (Tilde) = Kurzschreibweise für das Home Directory
+
+▶ ls
+  = list, zeigt Inhalt des aktuellen Ordners
+  • ls -a → auch versteckte Dateien (beginnen mit .)
+  • ls -l → Langformat mit Details
+
+▶ pwd
+  = print working directory, zeigt den Pfad des AKTUELLEN Ordners
+  • Beispiel (Windows/Git Bash): /c/Users/mikha
+  • Beispiel (Mac): /Users/name
+
+5. NAVIGIEREN
+▶ cd Desktop/
+  = change directory, in Unterordner wechseln
+▶ cd ..
+  = eine Ebene nach oben (Parent Directory)
+▶ cd
+  = ohne Argument: zurück ins Home Directory
+• Tab-Taste vervollständigt Namen, spart Tipparbeit und Tippfehler
+• Namen mit Leerzeichen in Anführungszeichen: cd "Work 2024"
+
+6. PFADE
+• Absoluter Pfad = beginnt bei der Wurzel /, führt von überall zum selben Ziel
+  Beispiel: /Users/name/documents/report.pdf
+  Beispiel: ~/Desktop (Home als Startpunkt)
+• Relativer Pfad = abhängig vom aktuellen Ordner
+  ./script.js              → Datei im aktuellen Ordner (. = hier)
+  ../images/photo.jpg      → eine Ebene höher, dann images/
+  ../../projects/projectA  → zwei Ebenen höher
+• Faustregel: Absolut = "Adresse mit Land und Stadt", relativ = "zweite Straße links"
+
+7. ERSTELLEN UND LÖSCHEN
+▶ mkdir Plants
+  = make directory, neuen Ordner anlegen (auch mehrere möglich)
+▶ touch purple.txt
+  = leere Datei anlegen (auch mehrere möglich), Name kommt vom "Berühren" (Zeitstempel)
+▶ rm purple.txt
+  = remove, löscht Dateien ENDGÜLTIG (kein Papierkorb!)
+▶ rmdir Plants
+  = löscht nur LEERE Ordner
+▶ rm -rf Plants
+  = löscht Ordner samt Inhalt
+  • -r = recursive (auch alles darin)
+  • -f = force (ohne Rückfrage)
+
+8. MAN PAGES UND FLAGS
+• Flags/Options = Zusätze mit - hinter dem Befehl, ändern sein Verhalten
+  Beispiel: ls -l, ls -a, ls -la (kombiniert)
+• man ls = Handbuch zum Befehl (mit q verlassen)
+• Git Bash hat kein man, stattdessen: ls --help
+
+9. TYPISCHE FEHLER
+• Befehl im falschen Fenster (Node REPL statt Shell)
+• Vor rm -rf immer erst pwd und ls prüfen
+• Nie rm -rf auf ~ oder / anwenden
+• Falsche Groß-/Kleinschreibung bei Mac/Linux (Desktop ≠ desktop)
+• Leerzeichen im Namen ohne Anführungszeichen
+• cd in nicht vorhandenen Ordner → "No such file or directory"
