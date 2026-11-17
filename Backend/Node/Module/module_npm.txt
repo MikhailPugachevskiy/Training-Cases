@@ -1,0 +1,103 @@
+KAPITEL 32 – EXPLORING MODULES & THE NPM UNIVERSE (Section 32)
+
+1. WORUM GEHT ES?
+• Letzter Schritt vor Express (Express = ein npm-Paket)
+• Wichtig: module.exports, require, npm install, package.json
+• Unwichtig (nur Übung): Jokes-, Figlet-, Franc-Pakete
+
+2. MODULE: CODE ZWISCHEN DATEIEN TEILEN
+• Browser: alle Skripte teilen alles, Reihenfolge im HTML zählt
+• Node: jede Datei teilt NUR, was sie exportiert
+• require('./math') = eigene Datei einbinden (./ ist Pflicht, .js optional)
+• Ohne ./ sucht Node ein Paket oder Built-in-Modul → "Cannot find module"
+• Nichts exportiert = leeres Objekt {}
+
+3. EXPORTIEREN: DREI WEGE
+▶ module.exports.add = add;
+  = Eigenschaft an das Export-Objekt hängen
+▶ module.exports = { add, PI, square };
+  = Export-Objekt komplett ersetzen
+▶ exports.add = add;
+  = Kurzform (exports verweist auf module.exports)
+• exports = ... neu zuweisen bricht die Verbindung → nichts wird exportiert
+• Einbinden mit Destructuring: const { PI, square } = require('./math');
+• Nicht exportierte Dinge (z. B. add) sind in der anderen Datei nicht verfügbar
+
+4. ORDNER EINBINDEN
+▶ const cats = require('./shelter');
+  • Node sucht im Ordner die index.js (oder das "main"-Feld der package.json)
+  • index.js = Einstiegspunkt des Ordners, sammelt und exportiert die anderen Dateien
+  • Dasselbe Muster nutzen alle fremden Pakete
+
+5. NPM
+• npm = (1) Registry mit tausenden freien Paketen, (2) Kommandozeilen-Tool
+• Kommt mit Node (Test: npm eingeben, kein "command not found")
+• Paket = Code, den andere geschrieben haben
+• Pro-Version von npm nicht nötig (nur zum Veröffentlichen)
+
+6. PAKETE INSTALLIEREN (lokal)
+▶ npm install give-me-a-joke
+▶ npm i colors
+  = i ist die Kurzform von install
+▶ npm i franc langs
+  = mehrere Pakete mit Leerzeichen getrennt
+• Paketname muss exakt stimmen (Bindestriche beachten, Doku auf npmjs.com)
+• Es entstehen: node_modules/ (Paketcode samt Abhängigkeiten) und package-lock.json
+• node_modules weder umbenennen noch bearbeiten, package-lock.json nicht anfassen
+• Einbinden OHNE ./ : const colors = require('colors');  → Node sucht in node_modules
+• Lokal = nur in diesem Projektordner nutzbar (gut: jedes Projekt kann andere Versionen haben)
+
+7. GLOBALE PAKETE
+▶ npm i -g cowsay
+  = -g global, überall als Befehl nutzbar (Beispiel: cowsay hello)
+• Sinnvoll nur für Kommandozeilen-Tools, sonst immer lokal installieren
+• Globales Paket in einem Projekt nutzen: npm link cowsay
+• Rechtefehler (Mac/Linux): Colt nutzt sudo chown -R $USER /usr/local/lib/node_modules, nur Demo, nicht blind kopieren
+
+8. PACKAGE.JSON
+• Steckbrief des Projekts im JSON-Format: name, version, description, main, scripts, author, license, dependencies
+• dependencies = Pakete samt Versionen, die das Projekt braucht
+• Versionsangaben: "1.1.1" exakt | "~1.0.4" nur Patch-Updates | "^1.4.0" auch Minor-Updates (1.x.x)
+• Liegt im Hauptordner des Projekts
+▶ npm init
+  = fragt Name, Version, Entry point usw. ab und legt package.json an
+  • Enter = Standardwert übernehmen, am Ende mit yes bestätigen
+  • npm init -y übernimmt alle Standardwerte sofort
+• Danach trägt npm install paketname das Paket automatisch unter dependencies ein
+• Das Eintragen schaltet nichts frei, es ist nur eine Liste (node_modules wird trotzdem gebraucht)
+• Wird ein Paket nicht mehr genutzt: Eintrag aus package.json löschen
+
+9. ALLE ABHÄNGIGKEITEN INSTALLIEREN
+• node_modules wird NICHT geteilt (zu groß, nicht auf GitHub hochladen)
+• Weitergeben: Projekt MIT package.json, OHNE node_modules
+▶ npm install
+  = ohne Paketnamen: liest die package.json und baut node_modules neu auf
+• Üblicher Ablauf: Code herunterladen → in den Projektordner (cd) → npm install → node index.js
+• Für Git: Datei .gitignore mit der Zeile node_modules
+
+10. IMPORTANT NOTE: FRANC UND IMPORT
+• Neuere franc-Versionen (ab 6) funktionieren nur mit import, nicht mit require
+• Kurs bleibt bei require → franc Version 5 installieren:
+▶ npm install franc@5.0.0
+• Alternative: franc@latest + "type": "module" in der package.json + import statt require
+• Beides nicht mischen; nach der Challenge im Kurs wieder require nutzen
+• Bugfix: if (language) { ... } else { ... } prüfen, bevor language.name gelesen wird
+
+11. PRAXIS-PROJEKTE
+• Jokester: give-me-a-joke + colors → Dad Joke in Regenbogenfarben (Callback)
+• Artster: figlet + colors → ASCII-Text in Grün (Callback mit err und data)
+• LangGuessr (Challenge): franc + langs + colors
+  Ablauf: process.argv[2] → franc(text) → Code (z. B. fra) → langs.where("3", code).name
+  'und' = undetermined → Fehlermeldung in Rot, sonst "Our best guess is: ..." in Grün
+▶ node index.js "Bonjour je suis Colt"
+  • Mehrere Wörter in Anführungszeichen!
+• Colors erweitert Strings: "text".red / .green / .rainbow (ohne Funktionsaufruf)
+
+12. TYPISCHE FEHLER
+• ./ beim Einbinden eigener Dateien vergessen
+• Paket nicht im richtigen Projektordner installiert
+• Paketname falsch geschrieben
+• exports neu zuweisen statt exports.name = ...
+• franc ab Version 6 mit require benutzen
+• node_modules oder package-lock.json von Hand ändern
+• Mehrwort-Text ohne Anführungszeichen an LangGuessr übergeben
