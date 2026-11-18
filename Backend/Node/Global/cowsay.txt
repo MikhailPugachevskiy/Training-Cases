@@ -1,0 +1,73 @@
+$ npm install -g cowsay
+$ cowsay
+
+=> Usage: cli.js [-e eye_string] [-f cowfile] [-h] [-l] [-n] [-T tongue_string] [-W
+column] [-bdgpstwy] text
+
+If any command-line arguments are left over after all switches have been
+processed, they become the cow's message.
+
+If the program is invoked as cowthink then the cow will think its message
+instead of saying it.
+
+
+Optionen:
+  --version   Version anzeigen                                         [boolean]
+  -e          Select the appearance of the cow's eyes.          [Standard: "oo"]
+  -T          The tongue is configurable similarly to the eyes through -T and
+              tongue_string.                                    [Standard: "  "]
+  -W          Specifies roughly where the message should be wrapped. The default
+              is equivalent to -W 40 i.e. wrap words at or before the 40th
+              column.                                      [Zahl] [Standard: 40]
+  -f          Specifies a cow picture file (''cowfile'') to use. It can be
+              either a path to a cow file or the name of one of cows included in
+              the package.                                 [Standard: "default"]
+  --think     Think the message instead of saying it aloud.            [boolean]
+  -b          Mode: Borg                                               [boolean]
+  -d          Mode: Dead                                               [boolean]
+  -g          Mode: Greedy                                             [boolean]
+  -p          Mode: Paranoia                                           [boolean]
+  -s          Mode: Stoned                                             [boolean]
+  -t          Mode: Tired                                              [boolean]
+  -w          Mode: Wired                                              [boolean]
+  -y          Mode: Youthful                                           [boolean]
+  -h, --help  Hilfe anzeigen                                           [boolean]
+  -n          If it is specified, the given message will not be word-wrapped.
+                                                                       [boolean]
+  -r          Select a random cow                                      [boolean]
+  -l          List all cowfiles included in this package.              [boolean]
+
+
+$ cowsay helloooo
+ __________
+< helloooo >
+ ----------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Node/Global (main)
+$ cowsay helloooo -s
+ __________
+< helloooo >
+ ----------
+        \   ^__^
+         \  (**)\_______
+            (__)\       )\/\
+             U  ||----w |
+                ||     ||
+
+
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Node/Global (main)
+$ cowsay helloooo -b
+ __________
+< helloooo >
+ ----------
+        \   ^__^
+         \  (==)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
