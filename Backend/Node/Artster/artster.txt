@@ -1,0 +1,41 @@
+=> $ mkdir Artster
+
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Node (main)
+=> $ cd Artster/
+
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Node/Artster (main)
+$ npm init
+=> This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (artster)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Mikhail Pugachevskiy
+license:
+type: (commonjs)
+About to write to C:\Users\mikha\Documents\GitHub\Udemy\Backend\Node\Artster\package.json:
+
+{
+  "name": "artster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikhail Pugachevskiy",
+  "type": "commonjs"
+}
+
+
+Is this OK? (yes) yes
