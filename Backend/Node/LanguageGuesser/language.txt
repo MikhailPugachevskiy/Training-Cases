@@ -1,0 +1,41 @@
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Node/LanguageGuesser (main)
+$ ls
+index.js  node_modules/  package.json  package-lock.json
+
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Node/LanguageGuesser (main)
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (langguessr)
+version: (2.0.0)
+description:
+git repository:
+keywords:
+author:
+license: (ISC)
+type: (module)
+About to write to C:\Users\mikha\Documents\GitHub\Udemy\Backend\Node\LanguageGuesser\package.json:
+
+{
+  "type": "module",
+  "name": "langguessr",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "franc": "^6.1.0",
+    "langs": "^2.0.0"
+  }
+}
+

@@ -1,4 +1,3 @@
-// REMEMBER TO RUN "npm install" in your terminal (in the same directory as this file)
 import { franc } from 'franc';
 import langs from 'langs';
 import colors from 'colors';
