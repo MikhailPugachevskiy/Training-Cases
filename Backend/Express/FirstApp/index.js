@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
-app.listen(3000, () => {
-    console.log("LISTENING ON PORT 3000!")
+app.use(() => {
+    console.log("WE GOT A NEW REQUEST!!")
+})
+
+app.listen(8080, () => {
+    console.log("LISTENING ON PORT 8080")
 })
