@@ -1,0 +1,107 @@
+KAPITEL 33 – CREATING SERVERS WITH EXPRESS (Section 33)
+
+1. WAS IST EXPRESS?
+• npm-Paket, "fast, unopinionated, minimalist web framework for Node.js"
+• Zum Bauen von Webanwendungen und APIs
+• Express hilft dabei:
+  – Server starten, der auf Requests lauscht
+  – Eingehende Requests parsen (HTTP-Text → JavaScript-Objekt)
+  – Requests passenden Routen zuordnen
+  – Response bauen (Status, Inhalt, Header)
+• Nur Express 101: Konzepte verstehen, Syntax in Docs/altem Code nachschlagen
+
+2. LIBRARY vs. FRAMEWORK
+• Library: Du bestimmst, wann und wo du sie nutzt (z. B. Axios, colors)
+• Framework: Es gibt den Ablauf vor, du fügst deinen Code ein (Inversion of Control)
+• Tausch: weniger Freiheit, dafür schnellere Entwicklung und viele fertige Funktionen
+• Express = leichtes Framework (nah an der Library), Ruby on Rails = sehr streng
+
+3. ERSTE APP
+▶ mkdir FirstApp, dann cd FirstApp
+▶ npm init -y
+  = package.json mit Standardwerten (-y = alle Fragen überspringen)
+▶ npm i express
+  = installiert Express (--save ist heute nicht mehr nötig)
+▶ node index.js
+  = startet den Server (Strg+C beendet ihn)
+• Rezept in index.js:
+  const express = require("express");
+  const app = express();          // express() = Funktion, Ergebnis = App
+  app.listen(8080, () => { console.log("LISTENING ON PORT 8080") })
+• app.listen startet den Server, der Callback läuft, sobald er bereit ist
+• Terminal bleibt "hängen": Server wartet auf Requests, das ist richtig
+• Aufruf im Browser: http://localhost:8080
+  – localhost = dein eigener Rechner (nur lokal erreichbar)
+  – Port = Eingang für einen Server, pro Port nur ein Server (3000 und 8080 sind üblich)
+• Ohne Route: "Cannot GET /" mit Status 404 (automatisch von Express)
+
+4. REQUEST UND RESPONSE
+• app.use((req, res) => { ... }) läuft bei JEDEM Request (jeder Pfad, jede Methode)
+• req = Request-Objekt (Pfad, Header, params, query, ...), von Express erzeugt
+• res = Response-Objekt, mit Methoden zum Antworten
+• req/res sind nur übliche Namen, Reihenfolge ist fest: erst Request, dann Response
+• res.send(...) sendet die Antwort:
+  – String → HTML (Content-Type text/html)
+  – Objekt → JSON (Content-Type application/json)
+• Pro Request nur EINE Antwort, danach ist er abgeschlossen
+
+5. ROUTING
+• Routing = Pfad + Methode einer Antwort zuordnen (gibt es in jedem Framework)
+▶ app.get('/cats', (req, res) => { res.send('MEOW!!') })
+  = reagiert nur auf GET-Requests (jede URL im Browser ist GET)
+▶ app.post('/cats', (req, res) => { res.send('POST ...') })
+  = reagiert nur auf POST (gleicher Pfad, andere Antwort möglich)
+• Weitere Methoden: app.put, app.delete, ...
+• '/' = Root Route
+• Express prüft Routen von oben nach unten, die erste passende gewinnt
+• Nicht definierter Pfad → "Cannot GET ..." (404)
+
+▶ app.get('*', (req, res) => { res.send(`I don't know that path!`) })
+  = Catch-All, fängt alle übrigen GET-Requests ab
+  • IMMER ans Ende, sonst überdeckt sie alle Routen darunter
+  • ACHTUNG Express 5: '*' löst Fehler "Missing parameter name at 1" aus
+    Lösung: app.get('/{*path}', (req, res) => { ... })
+  • Express 4 (z. B. ZIP, ^4.17.1) akzeptiert '*' noch
+
+6. PATH-PARAMETER
+▶ app.get('/r/:subreddit/:postId', (req, res) => {
+      const { subreddit, postId } = req.params;
+  })
+• : (Doppelpunkt) macht einen Pfadteil zur Variablen
+• /r/gardening/289173 → req.params = { subreddit: 'gardening', postId: '289173' }
+• Werte sind immer Strings, Express prüft nichts (kein Zahlen-/Wort-Check)
+• Muster passt nur bei gleicher Anzahl Teile (/r/:a passt nicht auf /r/a/b)
+• Spezifischere Routen vor allgemeineren definieren
+
+7. QUERY STRINGS
+• Query String = Teil der URL nach ?, Paare als key=value, getrennt durch &
+  Beispiel: /search?q=dogs&color=red
+• Im Pfad der Route steht NICHTS davon
+• Express legt alles in req.query: { q: 'dogs', color: 'red' }
+▶ const { q } = req.query;
+• Fehlt der Parameter, ist er undefined → mit if (!q) behandeln
+• Typischer Einsatz: Suche, Sortierung, Filter (kommt von Links oder Formularen)
+
+8. NODEMON
+• Problem: Nach jeder Code-Änderung muss der Server von Hand neu gestartet werden
+• nodemon = Tool, das bei Änderungen automatisch neu startet (nur für die Entwicklung)
+▶ npm i -g nodemon
+  = global installieren (-g), damit der Befehl nodemon überall funktioniert
+▶ nodemon -v
+  = Version prüfen ("command not found" = Installation fehlgeschlagen)
+▶ nodemon index.js
+  = ersetzt node index.js
+• Beobachtet standardmäßig .js- und .json-Dateien im Ordner
+• Bei Änderung: "restarting due to changes", listen-Callback läuft erneut
+• rs + Enter = manueller Neustart
+• Lokal installiert (--save-dev) geht der Befehl nur über ein npm-Skript
+
+9. TYPISCHE FEHLER
+• Cannot find module 'express': npm install vergessen oder falscher Ordner
+• Missing parameter name at 1: '*' mit Express 5
+• EADDRINUSE: Port belegt, alter Server läuft noch
+• Änderungen nicht sichtbar: Server nicht neu gestartet
+• Route wird nie erreicht: allgemeinere Route steht weiter oben
+• Browser lädt endlos: kein res.send aufgerufen
+• Cannot set headers after they are sent: zwei Antworten pro Request
+• Cannot POST /...: nur app.get definiert, Browser sendet immer GET
