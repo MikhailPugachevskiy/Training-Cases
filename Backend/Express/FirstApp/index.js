@@ -33,3 +33,11 @@ app.listen(8080, () => {
     localhost = dein eigener Rechner, nur du erreichst den Server.
     Port = Eingang, an dem der Server lauscht. Zwei Server können nicht denselben Port nutzen.
 - Anfangs kommt „Cannot GET /“. Express meldet automatisch 404, weil noch keine Route antwortet. */
+
+/*
+Routing = einen Pfad einem Code und einer Antwort zuordnen.
+app.get(pfad, callback) reagiert nur auf GET-Requests. Tippst du eine URL in den Browser, ist das immer GET.
+app.post reagiert nur auf POST. Dasselbe /cats kann so zwei verschiedene Antworten haben.
+Weitere Methoden: app.put, app.delete usw. (in den Docs unter Application).
+/ heißt Root Route.
+Nicht definierter Pfad → Express antwortet selbst mit „Cannot GET …“.*/
