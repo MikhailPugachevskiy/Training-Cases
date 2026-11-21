@@ -41,3 +41,8 @@ app.post reagiert nur auf POST. Dasselbe /cats kann so zwei verschiedene Antwort
 Weitere Methoden: app.put, app.delete usw. (in den Docs unter Application).
 / heißt Root Route.
 Nicht definierter Pfad → Express antwortet selbst mit „Cannot GET …“.*/
+
+
+/*app.get('*', (req, res) => {          // Express 5: app.get('/{*path}', ...)
+    res.send(`I don't know that path!`)
+})*/
