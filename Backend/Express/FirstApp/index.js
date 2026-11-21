@@ -46,3 +46,6 @@ Nicht definierter Pfad → Express antwortet selbst mit „Cannot GET …“.*/
 /*app.get('*', (req, res) => {          // Express 5: app.get('/{*path}', ...)
     res.send(`I don't know that path!`)
 })*/
+
+//- Routen werden von oben nach unten geprüft, die erste passende gewinnt.
+//- Steht die Catch-All oben, überdeckt sie alle anderen GET-Routen.
