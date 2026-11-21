@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
     res.send('This is the home page!')
 })
 
+app.post('/cats', (req, res) => {
+    res.send('POST REQUEST TO /cats!!!! THIS IS DIFFERENT THAN A GET REQUEST!')
+})
+
 app.get('/cats', (req, res) => {
     res.send('MEOW!!')
 })
