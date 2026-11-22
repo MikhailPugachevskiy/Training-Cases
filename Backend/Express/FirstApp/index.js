@@ -43,8 +43,16 @@ app.get('/search', (req, res) => {
     const { q } = req.query;;
     if (!q) {
         res.send('NOTHING FOUND IF NOTHING SEARCHED!')
+    } else {
+        res.send(`<h1>Search results for: ${q}</h1>`)
     }
 })
+
+/*
+- query String = Teil der URL nach dem ?, z. B. /search?q=dogs&color=red.
+- mehrere Paare trennst du mit &.
+- im Pfad der Route steht nichts davon. Express legt alles in req.query: { q: 'dogs', color: 'red' }.
+- fehlt der Parameter, ist er undefined. Deshalb prüfen mit if (!q).
 
 app.get('/{*path}', (req, res) => {
     res.send(`I don't know that path!`)
