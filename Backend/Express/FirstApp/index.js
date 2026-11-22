@@ -21,6 +21,10 @@ app.get('/dogs', (req, res) => {
     res.send('WOOF!')
 })
 
+app.get('*', (req, res) => {
+    res.send(`I don't know that path!`)
+})
+
 app.listen(8080, () => {
     console.log("LISTENING ON PORT 8080")
 })
