@@ -5,8 +5,14 @@ const app = express();
     console.log("WE GOT A NEW REQUEST!!")
     res.send('<h1>This is my webpage!</h1>')
 })*/
+
 app.get('/', (req, res) => {
     res.send('This is the home page!')
+})
+
+app.get('/r/:subreddit', (req, res) => {
+    const { subreddit } = req.params;
+    res.send(`<h1>Browsing the ${subreddit} subreddit</h1>`)
 })
 
 app.post('/cats', (req, res) => {
