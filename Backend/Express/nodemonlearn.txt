@@ -1,0 +1,23 @@
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Express/FirstApp (main)
+$ nodemon -v
+3.1.14
+
+mikha@LENOVOV15IWL UCRT64 ~/Documents/GitHub/Udemy/Backend/Express/FirstApp (main)
+$ nodemon index.js
+[nodemon] 3.1.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node index.js`
+[nodemon] clean exit - waiting for changes before restart
+node index.js
+
+
+- Ohne Nodemon musst du den Server nach jeder Code-Änderung selbst neu starten (Strg+C, dann node index.js).
+- Mit Nodemon ersetzt du node durch nodemon: Es startet bei jedem Speichern automatisch neu.
+- Man installiert es global mit -g, damit der Befehl nodemon im ganzen System verfügbar ist.
+- Eine Änderung siehst du am Terminal: „restarting due to changes“ und dein listen-Callback läuft erneut.
+- Nodemon beobachtet standardmäßig nur .js und .json. HTML und CSS sind später kein Problem.
