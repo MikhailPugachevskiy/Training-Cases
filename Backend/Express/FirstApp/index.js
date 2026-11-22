@@ -20,6 +20,13 @@ app.get('/r/:subreddit/:postId', (req, res) => {
     res.send(`<h1>Viewing Post ID: ${postId} on the ${subreddit} subreddit</h1>`)
 })
 
+/*
+- Der Doppelpunkt macht einen Teil des Pfads zur Variablen.
+- /r/gardening/289173 ergibt req.params: { subreddit: 'gardening', postId: '289173' }.
+- Alle Werte sind Strings. Express prüft nicht, ob etwas eine Zahl ist.
+- Das Muster /r/:subreddit passt nicht auf /r/a/b, dafür braucht es eine eigene Route mit zwei Teilen.
+- Reihenfolge beachten: Die Catch-All muss darunter stehen. */
+
 app.post('/cats', (req, res) => {
     res.send('POST REQUEST TO /cats!!!! THIS IS DIFFERENT THAN A GET REQUEST!')
 })
