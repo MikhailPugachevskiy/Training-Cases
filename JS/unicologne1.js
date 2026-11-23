@@ -112,3 +112,15 @@ let $totalSales = 1000;
 let productID = 12345;
 let itemPrice$ = 25.99;
 let _isLoggedIn = true;
+
+
+
+/*Übungsaufgabe 5: Schreiben Sie den Code, der die folgenden Variablen initialisiert:
+
+k mit dem Wert 88
+PI mit dem Wert 3.14
+name mit dem Wert "bob"*/
+
+let k = 88
+let PI = 3.14
+let name = "bob"
