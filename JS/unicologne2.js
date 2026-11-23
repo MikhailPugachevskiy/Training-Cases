@@ -53,3 +53,15 @@ console.log(`c = ${c}`)
 console.log(`d = ${d}`)
 console.log(`e = ${e}`)
 console.log(`f = ${f}`)
+
+
+/*Aufgabe 8.2: Schreiben Sie ein Code, der zwei Variablen, v und w, mit den Werten 15 und 4 (jeweils) initialisiert. 
+Danach initialisieren Sie eine weitere Variable t, die das Ergebnis von x modulo y enthält.*/
+
+// Gib deinen Code unten ein
+let v = 15
+let w = 4
+let t = x % y
+
+// Ändern Sie die Zeile unten nicht
+console.log(`x = ${x}, y = ${y}, z = ${z}`)
