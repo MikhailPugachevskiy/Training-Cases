@@ -1,9 +1,11 @@
 //Übungsaufgabe 1: Ausgaben 
-//Verwenden Sie die Codeansicht, um ein Programm zu schreiben, das Hello World! ausgibt.
+
+//Aufgabe 1.1: Verwenden Sie die Codeansicht, um ein Programm zu schreiben, das Hello World! ausgibt.
 
 console.log("Hello World!")
 
-/*Korrigieren Sie den Code so, dass nur Hello, JavaScript! ausgegeben wird. Die Zeile, die Hello, JavaScript! ausgibt, steht bereits unter dem Editor
+/*Aufgabe 1.2: 
+  Korrigieren Sie den Code so, dass nur Hello, JavaScript! ausgegeben wird. Die Zeile, die Hello, JavaScript! ausgibt, steht bereits unter dem Editor
   und wird eigenständig ausgeführt. Fügen Sie sie also nicht erneut hinzu.
 
 - Ersetze das ? durch die Symbole, die eine Zeile in einen Kommentar verwandeln
@@ -13,5 +15,21 @@ console.log("Hello World!")
 //console.log("Goodbye!");
 
 
+
+//Übungsaufgabe 2: Zahlen & Zeichenketten
+
+//Aufgabe 2.1: Schreiben Sie einen Code, der eine Variable namens x mit dem Wert 3.14 initialisiert.
+
+let x = 3.14;
+
+
+//Aufgabe 2.2: Speichern Sie die Zeichenfolge Ich lerne JavaScript! in einer Variablen namens student.
+
+let student = "Ich lerne JavaScript!"
+
+
+//Aufgabe 2.3: Speichern Sie den String Hello, welcome to JavaScript! in einer Variable namens greeting
+
+let greeting = "Hello, welcome to JavaScript!";
 
 
