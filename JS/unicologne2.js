@@ -65,3 +65,43 @@ let t = x % y
 
 // Ändern Sie die Zeile unten nicht
 console.log(`x = ${x}, y = ${y}, z = ${z}`)
+
+
+
+//Übungsaufgabe 9: Arithmetische Kurzformen
+
+/*Aufgabe 9.1: count beginnt bei 0, und die Zeile unter dem Code gibt den Wert aus.
+
+Die Aufgabe ist, doe folgenden Operationen in dieser Reihenfolge hinzuzufügen:
+
+    Addiere 4 zu count
+    Multipliziere count mit 2
+    Subtrahiere 1 von count
+
+Verwenden Sie dazu die arithmetischen Kurzformen.*/
+
+let count = 0;
+//Geben Sie Ihren Code hier unten ein
+count += 4
+count *= 2
+count -= 1
+console.log(`count = ${count}`);
+
+
+/*Aufgabe 9.2: Es ist ein Code mit der Initialisierung von balance gegeben.
+
+Fügen Sie die folgenden Operationen in dieser Reihenfolge hinzu:
+
+    100 zu balance addieren
+    balance um 10% erhöhen
+    50 von balance subtrahieren
+
+Verwenden Sue dazu die arithmetischen Abkürzungen!*/
+
+let balance = 0
+balance += 100
+balance *= 1.1
+balance -= 50
+
+// Ändern Sie die Zeile unten nicht
+console.log(`balance = ${Math.floor(balance)}`)
