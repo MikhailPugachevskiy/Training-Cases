@@ -33,3 +33,15 @@ let student = "Ich lerne JavaScript!"
 let greeting = "Hello, welcome to JavaScript!";
 
 
+
+//Übungsaufgabe 3: Boolescher Wert
+
+//Aufgabe 3.1: Deklarieren Sie eine Variable namens boolean und weise ihr den Wert true zu.
+
+let boolean = true;
+
+
+/*Aufgabe 3.2: Deklarieren Sie eine Variable namens isLoggedIn und weisen ihr den Wert false zu, um darzustellen, 
+  dass ein Nutzer derzeit nicht angemeldet ist.*/
+
+let isLoggedIn = false;
