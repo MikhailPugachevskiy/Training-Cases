@@ -12,3 +12,40 @@ console.log(`b4 = ${b4}`)
 let b1 = true
 let b2 = true
 let b3 = false
+
+
+
+//Übungsaufgabe 15: Logische Operatoren
+
+/*Sie helfen einer Tierhandlung dabei, ein System zu erstellen, mit dem bestimmt wird, ob sie einem Kunden ein Haustier verkaufen kann.
+Initialisieren Sie folgende Variablen:
+
+- hasLicense mit dem Wert true
+- hasSpace mit dem Wert false
+- hasExperience mit dem Wert true
+
+Schreiben Sie folgenden logischen Ausdrücke, um Folgendes zu bestimmen:
+
+- canSellRegularPet: Der Kunde benötigt ENTWEDER eine Lizenz ODER Erfahrung UND muss Platz haben
+- canSellExoticPet: Der Kunde benötigt SOWOHL eine Lizenz ALS AUCH Erfahrung UND muss Platz haben
+- cannotSellAnyPet: Der Kunde hat KEINE Lizenz UND KEINE Erfahrung ODER hat KEINEN Platz */
+
+// Deklarieren & initialisieren der drei in der Aufgabe genannten Variablen
+let hasLicense = true
+let hasSpace = false
+let hasExperience = true
+
+// Ersetzen jeden Platzhalter unten durch den logischen Ausdruck, der in der Aufgabe beschrieben wird
+/*let canSellRegularPet = false
+  let canSellExoticPet = false
+  let cannotSellAnyPet = false */
+
+// Bedingungen berechnen
+let canSellRegularPet = (hasLicense || hasExperience) && hasSpace
+let canSellExoticPet = hasLicense && hasExperience && hasSpace
+let cannotSellAnyPet = (!hasLicense && !hasExperience) || !hasSpace
+
+// Ergebnisse ausgeben
+console.log("Can sell regular pet:", canSellRegularPet)
+console.log("Can sell exotic pet:", canSellExoticPet)
+console.log("Cannot sell any pet:", cannotSellAnyPet)
