@@ -81,3 +81,35 @@ let cannotDriveAny = !hasLicense || (!hasInsurance && !hasExperience)
 console.log("Can drive car:", canDriveCar)
 console.log("Can drive motorcycle:", canDriveMotorcycle)
 console.log("Cannot drive any:", cannotDriveAny)
+
+
+
+//Übungsaufgabe 17: Typkoerzierung
+
+/*Es ist ein Code mit mehreren Variablen verschiedener Typen gegeben.
+Führen Sie eine Typumwandlung durch und geben Sie die Ergebnisse aus:
+
+1. Wandeln Sie die Zahl num in einen String um und speichern sie in einer Variable namens a.
+2. Wandlen Sie den booleschen Wert bool in eine Zahl um und speicheren sie in einer Variable namens b.
+3. Wandlen Sie den String str in eine Zahl um und speichern sie in einer Variable namens c.
+4. Führen Sie eine implizite Typumwandlung durch, indem Sie num mit str verketten, und speichern das Ergebnis in einer Variable namens d.
+
+Verwenden Sie für die ersten drei Aufgaben die Funktionen zur expliziten Typumwandlung (String(), Number()) und 
+beobachten Sie die implizite Umwandlung bei der letzten Aufgabe. */
+
+//Gegeben:
+let num = 42
+let bool = false
+let str = "7"
+
+//Neuer Code:
+let a = String(num)
+let b = Number(bool)
+let c = Number(str)
+let d = num + str
+
+//Untere Zeilen nicht ändern
+console.log(`a = ${a}`)
+console.log(`b = ${b}`)
+console.log(`c = ${c}`)
+console.log(`d = ${d}`)
