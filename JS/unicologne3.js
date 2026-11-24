@@ -17,7 +17,7 @@ Danach initialisiere eine weitere Variable canVote, die speichert, ob die Person
 let age = 18
 let canVote = age >= 18
 
-// Ändern Sie die folgende Zeile nicht
+//Untere Zeile nicht ändern
 console.log(`age = ${age}, canVote = ${canVote}`)
 
 
@@ -32,18 +32,18 @@ console.log(`age = ${age}, canVote = ${canVote}`)
 
 Verwenden Sie die gegebenen Variablen und Vergleichsoperatoren. */
 
-// Gegebene Variablen
+//Gegeben:
 let a = 10
 let b = "10"
 let c = true
 
-// Schreiben Sie Ihren Code unten
+//Neuer Code:
 let d = a == b
 let e = a === c
 let f = b != c
 let g = a !== b
 
-// Ändern Sie die folgende Zeile nicht
+// Untere Zeilen nicht ändern
 console.log(`d = ${d}`)
 console.log(`e = ${e}`)
 console.log(`f = ${f}`)
@@ -60,12 +60,12 @@ let b1 = false
 let b2 = false
 let b3 = b1 || b2*/
 
-// Neuer Code:
+//Neuer Code:
 let b1 = true
 let b2 = false
 let b3 = b1 || b2
 
-//Ändere die Zeile unten nicht
+//Untere Zeile nicht ändern
 console.log(`b3 = ${b3}`)
 
 
@@ -76,11 +76,46 @@ let b4 = ?
 let b5 = ?
 let b6 = ? */
 
-// Neuer Code:
+//Neuer Code:
 let b4 = true
 let b5 = true
 let b6 = true
 
-// Nichts darunter ändern
+//Untere Zeile nicht ändern
 let b7 = b1 && b2 && b3
 console.log(`b4 = ${b4}`)
+
+
+
+//Übungsaufgabe 13
+
+//Aufgabe 13.1: Ersetzen Sie die Fragezeichen der Variablen b8 und b9, sodass b10 den Wert true annimmt. b8 & b9 müssen Zahlen enthalten (z. B. 3, 5, 11,…)
+
+/*Gegeben:
+let b8 = ?
+let b9 = ?
+let b10 = !((b8 + b9) > (b8 * b9))*/
+
+//Neuer Code:
+let b8 = 2
+let b9 = 5
+let b10 = !((b8 + b9) > (b8 * b9))
+
+//Untere Zeile nicht ändern
+console.log(`b10 = ${b10}`)
+
+
+//Aufgabe 13.2: Ersetzen Sie die Fragezeichen der Variablen x & y, damit z zu true ausgewertet wird. x & y sollten positive oder negative Ganzzahlen enthalten.
+
+/* Gegeben:
+let x = ?
+let y = ?
+let z = ((x * y) < (x + y) && (x + y) < (x - y)) */
+
+//Neuer Code:
+let x = 4
+let y = -3
+let z = ((x * y) < (x + y) && (x + y) < (x - y))
+
+//Untere Zeile nicht ändern
+console.log(`z = ${z}`)
