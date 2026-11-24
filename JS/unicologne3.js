@@ -48,3 +48,39 @@ console.log(`d = ${d}`)
 console.log(`e = ${e}`)
 console.log(`f = ${f}`)
 console.log(`g = ${g}`)
+
+
+
+//Übungsaufgabe 12: Logische Operatoren
+
+//Aufgabe 12.1: Ändern Sie die Werte von b1 und b2, sodass b3 den Wert true enthält. Es gibt mehrere Lösungen.
+
+/* Gegegeben:
+let b1 = false
+let b2 = false
+let b3 = b1 || b2*/
+
+// Neuer Code:
+let b1 = true
+let b2 = false
+let b3 = b1 || b2
+
+//Ändere die Zeile unten nicht
+console.log(`b3 = ${b3}`)
+
+
+//Aufgabe 12.2: Ersetzen Sie die Fragezeichen der Variablen b4, b5 und b6, sodass b7 true enthält.
+
+/*Gegeben:
+let b4 = ?
+let b5 = ?
+let b6 = ? */
+
+// Neuer Code:
+let b4 = true
+let b5 = true
+let b6 = true
+
+// Nichts darunter ändern
+let b7 = b1 && b2 && b3
+console.log(`b4 = ${b4}`)
