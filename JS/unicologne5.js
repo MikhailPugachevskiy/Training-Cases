@@ -44,3 +44,33 @@ if (temperature >= 10 && temperature <= 30) {
 }
 
 console.log(message); // Dies zeigt das Ergebnis
+
+
+
+//Übungsaufgabe 19: If-Else
+
+/*Aufgabe 19.1: Sie erhalten einen Code, der als Eingabe eine Zahl erhält, die die Windgeschwindigkeit angibt, 
+  und sie in einer Variablen namens wind speichert.
+  Ihre Aufgabe ist es, die Variable condition basierend auf den folgenden Bedingungen zu initialisieren:
+
+- "Calm", wenn wind kleiner als 8 ist,
+- "Breeze", wenn wind zwischen 8 und 31 liegt (einschließlich 8 und 31).
+- "Gale", wenn wind zwischen 32 und 63 liegt (einschließlich 32 und 63)
+- "Storm" andernfalls */
+
+//Gegeben:
+let wind = parseInt(inp); // Diese Zeile nicht ändern
+let condition = "unset";
+
+if (wind < 8) {
+    condition = "Calm";
+} else if (wind >= 8 && wind <= 31) {
+    condition = "Breeze";
+} else if (wind >= 32 && wind <= 63) {
+    condition = "Gale";
+} else {
+    condition = "Storm";
+}
+
+//Untere Zeile nicht ändern
+console.log(`condition = ${condition}`);
