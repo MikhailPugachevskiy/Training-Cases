@@ -74,3 +74,30 @@ if (wind < 8) {
 
 //Untere Zeile nicht ändern
 console.log(`condition = ${condition}`);
+
+
+/*Aufgabe 19.2: Ihnen wird ein Code gegeben, der als Eingabe eine Zahl erhält, die den Niederschlag in Millimetern angibt, 
+und sie in einer Variable namens rainfall speichert. Ihre Aufgabe ist es, eine Variable namens rainCondition basierend auf diesen Bedingungen zu initialisieren:
+
+- "Dry", wenn rainfall kleiner als 1 ist.
+- "Light Rain", wenn rainfall zwischen 1 und 10 liegt (einschließlich 1 und 10).
+- "Moderate Rain", wenn rainfall zwischen 11 und 50 liegt (einschließlich 11 und 50).
+- "Heavy Rain", wenn rainfall größer als 50 ist. */
+
+//Gegeben:
+let rainfall = parseInt(inp); // Diese Zeile nicht ändern
+let rainCondition = "unset";
+
+//Neuer Code:
+if (rainfall < 1) {
+    rainCondition = "Dry";
+} else if (rainfall >= 1 && rainfall <= 10) {
+    rainCondition = "Light Rain";
+} else if (rainfall >= 11 && rainfall <= 50) {
+    rainCondition = "Moderate Rain";
+} else if (rainfall > 50) {
+    rainCondition = "Heavy Rain";
+}
+
+//Untere Zeile nicht ändern
+console.log(rainCondition);
