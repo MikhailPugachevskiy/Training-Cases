@@ -64,3 +64,49 @@ if (age >= 10) {
 } else {
     console.log("Sorry, you are too young");
 }
+
+
+
+//Übungsaufgabe 22: Switch-Anweisung
+
+/*Verwenden Sie eine Switch-Anweisung, um den Wert der Variablen message abhängig vom Befehl festzulegen.
+Setzen Sie message auf:
+
+- "System starting" → wenn der Befehl "start" lautet
+- "System stopping" → wenn der Befehl "stop" lautet
+- "System paused" → wenn der Befehl "pause" lautet
+- "System resuming" → wenn der Befehl "resume" lautet
+
+Wenn der Befehl keiner bekannten Option entspricht, setzen Sie:
+
+- "Unknown command"
+
+Am Ende gibt das Programm den Wert von message aus.
+Legen Sie den Wert von message mithilfe einer switch-Anweisung korrekt fest. */
+
+
+// Den Befehl vom Benutzer abrufen
+let command = inp;
+
+// Eine Variable erstellen, um die Nachricht zu speichern
+let message;
+
+switch (command) {
+    case "start":
+        message = "System starting";
+        break;
+    case "stop":
+        message = "System stopping";
+        break;
+    case "pause":
+        message = "System paused";
+        break;
+    case "resume":
+        message = "System resuming";
+        break;
+    default:
+        message = "Unknown command";
+}
+
+// Die Nachricht ausgeben
+console.log(message);
