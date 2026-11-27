@@ -1,0 +1,117 @@
+KAPITEL 34 – CREATING DYNAMIC HTML WITH TEMPLATING (Section 34)
+
+1. WAS IST TEMPLATING?
+• Problem: Seiten wie r/soccer, r/chickens haben gleichen Aufbau, aber andere Daten
+• Template = HTML mit Lücken (wie Mad Libs), Express füllt sie zur Laufzeit
+• Möglich: Werte einsetzen, Schleifen, Bedingungen
+• Templates sollen möglichst "dumm" sein (nur anzeigen), Logik gehört in die Route
+• Engines: EJS (Embedded JavaScript), Handlebars, Pug (früher Jade), Nunjucks
+• Warum EJS: sehr verbreitet und echtes JavaScript (keine neue Syntax lernen)
+
+2. EJS EINRICHTEN
+▶ npm i express ejs
+▶ app.set('view engine', 'ejs');
+  = sagt Express, welche Engine genutzt wird
+• ejs muss NICHT mit require eingebunden werden (Express macht das)
+• Templates liegen standardmäßig im Ordner views, Dateiendung .ejs
+▶ res.render('home')
+  = rendert views/home.ejs und sendet das HTML (ohne views/ und .ejs)
+
+3. VIEWS-ORDNER ABSICHERN
+• Standard ist relativ zum Startordner von node (process.cwd())
+• Startest du von anderswo: "Failed to lookup view 'home'"
+▶ const path = require('path');
+▶ app.set('views', path.join(__dirname, '/views'));
+  • path = eingebautes Node-Modul für Pfade, path.join setzt Pfadteile zusammen
+  • __dirname = Ordner der aktuellen Datei, unabhängig vom Startort
+  • Einmal pro App einrichten, Ordnername frei wählbar
+
+4. EJS-TAGS
+▶ <%= wert %>   gibt den Wert aus (HTML wird escaped)
+▶ <% code %>    führt JavaScript nur aus, keine Ausgabe (if, else, for)
+▶ <%- wert %>   gibt unescaped aus (für include)
+• Jede Zeile JavaScript braucht eigene <% %>-Klammern
+• JavaScript-Regeln gelten weiter (Klammern { } müssen sich schließen)
+• Tipp: erst reines JavaScript schreiben, dann Tags und HTML einsetzen
+
+5. DATEN AN TEMPLATES ÜBERGEBEN
+▶ res.render('random', { num })
+  = 2. Argument: Objekt, Schlüssel werden im Template zu Variablen
+• { num } = Kurzform von { num: num }; { rand: num } hieße im Template rand
+• Nicht übergeben → "... is not defined"
+• Berechnungen in der Route erledigen, Template nur anzeigen
+• Beispiel: <h1>Your random number is: <%= num %></h1>
+
+6. BEDINGUNGEN
+  <% if(num % 2 === 0){ %>
+      <h2>even</h2>
+  <% } else { %>
+      <h2>odd</h2>
+  <% } %>
+• Kurz mit ternärem Operator: <%= num % 2 === 0 ? 'EVEN' : 'ODD' %>
+• Mehrzeiliges HTML → if/else, kurze Texte → ternär
+
+7. SCHLEIFEN
+  <ul>
+    <% for(let cat of cats) { %>
+      <li><%= cat %></li>
+    <% } %>
+  </ul>
+• ul außerhalb der Schleife, li innerhalb
+• Innen <%= cat %> (mit =), sonst erscheint nichts
+• Später kommen die Daten aus einer Datenbank
+
+8. KOMPLEXES BEISPIEL (data.json)
+• const redditData = require('./data.json');   → JSON wird direkt zum Objekt
+▶ const data = redditData[subreddit];
+  = Zugriff über eckige Klammern mit dem Wert aus req.params
+▶ res.render('subreddit', { ...data });
+  = Spread: name, subscribers, description, posts direkt als Variablen
+• if (data) { render subreddit } else { render notfound mit subreddit }
+  (ohne Prüfung: Fehler bei unbekanntem Subreddit)
+• Im Template: Schleife über posts, darin if (post.img) für optionale Bilder
+
+9. STATISCHE DATEIEN (CSS, JS, Bilder)
+▶ app.use(express.static(path.join(__dirname, 'public')));
+  • express.static = Middleware (Code zwischen Request und Response)
+  • Ausgeliefert wird der INHALT von public, nicht der Ordner selbst
+  • Link im Template: <link rel="stylesheet" href="/app.css"> (NICHT /public/app.css)
+  • Unterordner: href="/css/bootstrap.min.css"
+  • Test: http://localhost:3000/app.css im Browser
+  • Ordnername public ist Konvention, mehrere Ordner sind möglich
+
+10. BOOTSTRAP EINBINDEN
+• Compiled CSS/JS in public/css und public/js ablegen
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+• jQuery MUSS vor Bootstrap-JS stehen (sonst "requires jQuery")
+• Bootstrap 5 braucht kein jQuery mehr, die Kursversion schon
+
+11. PARTIALS (INCLUDES)
+▶ <%- include('partials/head') %>
+  • Wiederverwendbare Template-Teile, Ordner partials ist Konvention
+  • head.ejs: DOCTYPE, html, head, öffnendes body
+  • navbar.ejs: Navigation
+  • footer.ejs: Footer und schließendes body/html
+  • Jede Seite: include head → Inhalt → include footer
+  • DRY: Änderung nur an einer Stelle
+• <%- statt <%= : <%= würde das HTML als Text anzeigen (escaped)
+• Dynamischer Titel nur, wenn jede Route title übergibt, sonst "title is not defined"
+
+12. SICHERHEIT
+• Nutzerdaten immer mit <%= %> ausgeben (escaped)
+• <%- nur für eigenes HTML wie include
+• req.query nie direkt an res.render durchreichen (Hinweis von ejs.co)
+
+13. TYPISCHE FEHLER
+• Cannot find module 'ejs': npm i ejs fehlt
+• Failed to lookup view: falscher Startordner, Dateiname oder Ordner
+• ... is not defined: Variable nicht übergeben
+• Nichts angezeigt: <% statt <%= benutzt
+• <%= für Logik wie if: Syntaxfehler
+• Klammern in <% } %> vergessen
+• if (data) vergessen
+• CSS lädt nicht: express.static fehlt oder /public im Link
+• jQuery nach Bootstrap-JS geladen
+• include mit <%= statt <%-
