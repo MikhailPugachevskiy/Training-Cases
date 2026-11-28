@@ -1,0 +1,13 @@
+- Problem: Ohne Templates bräuchtest du für jeden Subreddit eine eigene HTML-Datei, obwohl alle gleich aufgebaut sind.
+
+- Template = HTML mit Lücken wie bei „Mad Libs“. Express füllt die Lücken zur Laufzeit mit Daten.
+
+- Man kann Werte einsetzen, Teile wiederholen (Schleife) und Teile ein- oder ausblenden (Bedingung).
+
+- EJS (Embedded JavaScript) steckt echtes JavaScript in HTML. Andere Engines wie Handlebars, Pug und Nunjucks haben eigene Syntax.
+
+- Regel: Templates sollen möglichst „dumm“ sein, also nur anzeigen. Die Logik gehört in die Route.
+
+- Static Assets (CSS, JS, Bilder) werden mit express.static ausgeliefert.
+
+- Partials sind wiederverwendbare Template-Teile (Head, Navbar, Footer), damit du nichts kopieren musst.
